@@ -35,8 +35,43 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  xml: ^6.3.0
+  scrollable_positioned_list: ^0.3.8
+  share_plus: ^7.0.2
+  url_launcher: ^6.1.4
+  shared_preferences: ^2.0.15
+  visibility_detector: ^0.4.0+2
+  provider: ^6.0.5
+  custom_cupertino_picker: ^2.0.3
+  package_info_plus: ^4.1.0
+  http: ^1.1.0
+  just_audio: ^0.9.35
+  device_info_plus: ^9.0.3
+  just_audio_background: ^0.0.1-beta.10
+  path_provider: ^2.1.1
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
+  flutter_lints: ^2.0.3
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/quran_icon.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/icon/quran_icon.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/icon/quran_icon.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/icon/quran_icon.png"
+
   flutter_test:
     sdk: flutter
 
@@ -59,8 +94,13 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+
+  assets:
+    - assets/
+    - assets/quran_db/
+    - assets/images/
+    - assets/icon/
+    - assets/images/sura_headers/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -74,6 +114,53 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+
+  fonts:
+    - family: MeeraInimai
+      fonts:
+        - asset: assets/fonts/MeeraInimai-Regular.ttf
+
+    - family: HindMadurai
+      fonts:
+        - asset: assets/fonts/HindMadurai-Regular.ttf
+
+    - family: MuktaMalar
+      fonts:
+        - asset: assets/fonts/MuktaMalar-Regular.ttf
+
+    - family: NotoSansTamil
+      fonts:
+        - asset: assets/fonts/NotoSansTamil.ttf
+
+    - family: AlQalam
+      fonts:
+        - asset: assets/fonts/AlQalam.ttf
+
+
+    - family: PDMS_Saleem
+      fonts:
+        - asset: assets/fonts/PDMS_Saleem_QuranFont.ttf
+
+
+    - family: Arabic
+      fonts:
+        - asset: assets/fonts/Arabic.ttf
+
+
+    - family: MeezanUni
+      fonts:
+        - asset: assets/fonts/MeezanUni.ttf
+
+
+    - family: Uthmani
+      fonts:
+        - asset: assets/fonts/UthmaniFont.ttf
+
+    - family: UthmanicScript
+      fonts:
+        - asset: assets/fonts/UthmanicScript.otf
+
+
   # fonts:
   #   - family: Schyler
   #     fonts:
