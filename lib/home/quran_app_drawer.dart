@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
-import '/read_quran/thafseer_screen.dart';
 import '../app_texts/home_texts.dart';
 import '../app_config/app_config.dart';
 import '../app_config/color_config.dart';

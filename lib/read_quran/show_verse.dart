@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import '../app_config/color_config.dart';
-import '/read_quran/thafseer.dart';
-import '/read_quran/thafseer_popup.dart';
 import '../app_texts/read_quran_texts.dart';
 import 'quran_helper.dart';
 import 'verse_helper.dart';

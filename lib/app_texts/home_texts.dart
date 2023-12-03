@@ -6,7 +6,7 @@ class HomeTexts {
   static const String arabicAndTranslation = 'Arabic script and translation';
 
   // Sura List Arabic Screen
-  static const String verseCount = 'Verses:';
+  static const String verseCount = 'Total verses:';
 
   // Sura List Tamil Screen
   static const String continueReading = 'Continue reading...';
@@ -43,7 +43,7 @@ class HomeTexts {
 
 
   // Quran App Drawer
-  static const String appNameSubtitle = '(Al Quran Translation)';
+  static const String appNameSubtitle = '(Translation of \nthe Holy Quran)';
   static const String quranAudio = 'Al Quran - Audio';
   static const String explanation = 'Explanations';
   static const String searchInQuran = 'Search in Quran';
