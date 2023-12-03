@@ -27,13 +27,7 @@ class QuranProvider extends ChangeNotifier {
   String _selectedTranslation = AppConfig.defaultTranslation;
 
   Map<String, String> translations = {
-    'john_trust': 'ஜான் டிரஸ்ட் (John Trust)',
-    'pj': 'P. ஜெய்னுல் ஆப்தீன்',
-    'king_fahd': 'மன்னர் ஃபஹத் வளாகம் - சவூதி',
-    'ift': 'இஸ்லாமிய நிறுவனம் டிரஸ்ட் (IFT)',
-    'abdul_hameed': 'அப்துல் ஹமீது பாகவி',
-    'tntj': 'தமிழ்நாடு தவ்ஹீத் ஜமாஅத்',
-    'omar_sheriff': 'உமர் ஷரீஃப் காஸிமி'
+    'en.sahih': 'Saheeh International',
   };
 
   List<String> languageFontsList = const [
