@@ -2,20 +2,20 @@ import '../app_config/app_config.dart';
 
 class HomeTexts {
     // Splash Screen
-  static const String theHolyQuran = 'திருக்குர்ஆன்';
-  static const String arabicAndTranslation = 'அரபு மூலம் மற்றும் மொழிபெயர்ப்பு';
+  static const String theHolyQuran = 'Al Quran';
+  static const String arabicAndTranslation = 'Arabic script and translation';
 
   // Sura List Arabic Screen
-  static const String verseCount = 'வசனங்கள்:';
+  static const String verseCount = 'Verses:';
 
   // Sura List Tamil Screen
-  static const String continueReading = 'வாசிப்பைத் தொடர்க...';
+  static const String continueReading = 'Continue reading...';
 
   
 // Home Screen
-  static const String translation = 'மொழிபெயர்ப்பு';
-  static const String onlyArabic = 'அரபு மூலம்';
-  static const String bookmarks = 'புத்தகக்குறிகள்';
+  static const String translation = 'Translation';
+  static const String onlyArabic = 'Recite in Arabic';
+  static const String bookmarks = 'Bookmarks';
 
 
   // Home Screen PopUp
@@ -25,7 +25,7 @@ class HomeTexts {
   static const String aboutUs = 'About us';
   static const String supportUs = 'Support us!';
   static const String shareAppText =
-      'திருக்குர்ஆன் தமிழாக்கம் Android App இனை இப்போதே Playstore இலிருந்து பதிவிறக்கம் செய்து பயன் படுத்துங்கள்: \n${AppConfig.playStoreUrl}';
+      'Get Al Quran App and read the translation of quran in your language. Download now!: \n${AppConfig.playStoreUrl}';
 
 // Rate App
   static const String feedback = 'Feedback';
@@ -39,19 +39,19 @@ class HomeTexts {
 
 
   // Sura Verse Picker
-  static const String goToVerseHeader = 'வசனத்திற்குச் செல்க...';
+  static const String goToVerseHeader = 'Go to verse...';
 
 
   // Quran App Drawer
-  static const String appNameSubtitle = '(திருக்குர்ஆன் தமிழாக்கம்)';
-  static const String quranAudio = 'திருக்குர்ஆன் - ஆடியோ';
-  static const String explanation = 'விளக்கக் குறிப்புகள்';
-  static const String searchInQuran = 'திருக்குர்ஆனில் தேடுக';
-  static const String goToVerse = 'வசனத்திற்குச் செல்க';
-  static const String settingsTranslation = 'அமைப்புகள்';
-  static const String shareThisAppTranslation = 'செயலியைப் பகிர்க';
-  static const String rateAppTranslation = 'செயலியைத் தரப்படுத்துக';
+  static const String appNameSubtitle = '(Al Quran Translation)';
+  static const String quranAudio = 'Al Quran - Audio';
+  static const String explanation = 'Explanations';
+  static const String searchInQuran = 'Search in Quran';
+  static const String goToVerse = 'Go to verse';
+  static const String settingsTranslation = 'Settings';
+  static const String shareThisAppTranslation = 'Share this app';
+  static const String rateAppTranslation = 'Rate this app';
   static const String checkForUpdates = 'Check for Updates';
-  static const String aboutUsTranslation = 'எம்மைப்பற்றி';
-  static const String donateUsTranslation = 'ஆதரவு வழங்க!';
+  static const String aboutUsTranslation = 'About us';
+  static const String donateUsTranslation = 'Support us!';
 }

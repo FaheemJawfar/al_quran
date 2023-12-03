@@ -3,5 +3,5 @@ class CommonWidgetTexts {
   static const String selectAnItem = 'Select an item';
   static const String popUpCancel = 'Cancel';
   static const String popUpSelect = 'Select';
-  static const String settingsTranslation = 'அமைப்புகள்';
+  static const String settingsTranslation = 'Settings';
 }

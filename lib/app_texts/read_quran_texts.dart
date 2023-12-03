@@ -1,30 +1,30 @@
 class ReadQuranTexts {
   // Read Sura Pop Up
-  static const String goToVerseTranslation = 'வசனத்திற்குச் செல்க';
-  static const String shareThisChapter = 'அத்தியாயத்தைப் பகிர்க';
-  static const String searchInQuranTranslation = 'திருக்குர்ஆனில் தேடுக';
+  static const String goToVerseTranslation = 'Go to verse';
+  static const String shareThisChapter = 'Share this chapter';
+  static const String searchInQuranTranslation = 'Search in Quran';
 
 // Show Verse
   static const String share = 'Share';
   static const String addBookmark = 'Add Bookmark';
-  static const String copyArabicAndTranslation = 'Copy Arabic + Tamil';
-  static const String copyArabic = 'Copy Arabic';
-  static const String copyTranslation = 'Copy Tamil';
+  static const String copyArabicAndTranslation = 'Copy Arabic + Translation';
+  static const String copyArabic = 'Copy Translation';
+  static const String copyTranslation = 'Copy Translation';
 
   // Quran Helper
   static const String languageCode = 'ta';
 
 // Verse Helper
-  static const String verseCopied = 'வசனம் பிரதி செய்யப்பட்டது!';
-  static const String holyQuran = 'திருக்குர்ஆன்';
-  static const String getTamilQuran = 'Get Tamil Quran App';
-  static const String balancedVerseCount = 'மீதமுள்ள வசனங்கள்';
+  static const String verseCopied = 'Verse copied successfully!';
+  static const String holyQuran = 'Al Quran';
+  static const String getTamilQuran = 'Get Al Quran App';
+  static const String balancedVerseCount = 'Pending verses';
   static const String downloadQuranApp =
-      'அத்தியாயத்தை முழுமையாக வாசிக்க Tamil Quran (திருக்குர்ஆன்) அப்ளிகேஷனை Download செய்யவும்.';
-  static const String quranTranslation = 'திருக்குர்ஆன் தமிழாக்கம்';
-  static const String chapter = 'அத்தியாயம்';
-  static const String totalVerseCount = 'மொத்த வசனங்கள்';
-  static const String translatedBy = 'மொழிபெயர்ப்பு';
-  static const String chapterCopied = 'அத்தியாயம் பிரதி செய்யப்பட்டது!';
-  static const String noInternet = 'உங்கள் இணைய இணைப்பை சரிபார்க்கவும்!';
+      'Get Al Quran app to read the full chapter in your mobile.';
+  static const String quranTranslation = 'Al Quran Translation';
+  static const String chapter = 'Chapter';
+  static const String totalVerseCount = 'Total verses';
+  static const String translatedBy = 'Translation';
+  static const String chapterCopied = 'Chapter copied successfully!';
+  static const String noInternet = 'Please check your internet connection!';
 }

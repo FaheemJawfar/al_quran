@@ -4,5 +4,5 @@ class QuranAudioTexts {
       'Please check your Internet connection!';
 
   // Reciter Selector
-  static const String chooseReciter = 'ஓதுபவரைத் தேர்வு செய்க...';
+  static const String chooseReciter = 'Choose a reciter...';
 }
