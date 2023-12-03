@@ -88,9 +88,6 @@ class _QuranAppDrawerState extends State<QuranAppDrawer> {
             ),
           ),
 
-          if(quranProvider.isPJMode) _buildListTiles(const Icon(Icons.notes),
-              HomeTexts.explanation, context, const ThafseerScreen()),
-
           _buildListTiles(
               _buildImageIcon('assets/images/quran-audio.png'),
               HomeTexts.quranAudio,

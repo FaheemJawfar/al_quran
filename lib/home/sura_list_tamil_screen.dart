@@ -78,7 +78,7 @@ class _SuraListTamilScreenState extends State<SuraListTamilScreen> {
 
           return ListTile(
             leading: Text(
-              '${suraDetails.index}.',
+              '${suraDetails.suraNumber}.',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 22,
@@ -86,7 +86,7 @@ class _SuraListTamilScreenState extends State<SuraListTamilScreen> {
               ),
             ),
             title: Text(
-              '${suraDetails.nameInEnglish} ${suraDetails.meaningOfName}',
+              '${suraDetails.nameInEnglish} (${suraDetails.meaningOfName})',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
@@ -94,13 +94,13 @@ class _SuraListTamilScreenState extends State<SuraListTamilScreen> {
               ),
             ),
             subtitle:
-                Text('${HomeTexts.verseCount} ${suraDetails.totalAyas}'),
+                Text('${HomeTexts.verseCount} ${suraDetails.totalVerses}'),
             trailing: Image.asset(
-              'assets/images/sura_headers/Surah_${suraDetails.index}.png',
+              'assets/images/sura_headers/Surah_${suraDetails.suraNumber}.png',
               color: quranProvider.isDarkMode ? Colors.white : Colors.black,
             ),
             onTap: () {
-              quranProvider.selectedSuraNumber = suraDetails.index;
+              quranProvider.selectedSuraNumber = suraDetails.suraNumber;
               Navigator.push(
                 context,
                 MaterialPageRoute(

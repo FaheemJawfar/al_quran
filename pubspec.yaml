@@ -116,21 +116,21 @@ flutter:
   # example:
 
   fonts:
-    - family: MeeraInimai
+    - family: Roboto
       fonts:
-        - asset: assets/fonts/MeeraInimai-Regular.ttf
+        - asset: assets/fonts/Roboto-Regular.ttf
 
-    - family: HindMadurai
+    - family: OpenSans
       fonts:
-        - asset: assets/fonts/HindMadurai-Regular.ttf
+        - asset: assets/fonts/OpenSans-VariableFont_wdth,wght.ttf
 
-    - family: MuktaMalar
+    - family: Montserrat
       fonts:
-        - asset: assets/fonts/MuktaMalar-Regular.ttf
+        - asset: assets/fonts/Montserrat-Regular.ttf
 
-    - family: NotoSansTamil
+    - family: NotoSans
       fonts:
-        - asset: assets/fonts/NotoSansTamil.ttf
+        - asset: assets/fonts/NotoSans-VariableFont_wdth,wght.ttf
 
     - family: AlQalam
       fonts:

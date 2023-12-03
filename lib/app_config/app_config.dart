@@ -11,7 +11,7 @@ class AppConfig {
   static const String payPalProfileLink = 'https://www.paypal.me/faheemjawfar';
   static const String whatsAppContactNumber = '94774106399';
 
-  static const String appDefaultFont = 'MuktaMalar';
+  static const String appDefaultFont = 'NotoSans';
   static const String defaultArabicFont = 'AlQalam';
   static const double defaultTranslationFontSize = 19;
   static const double defaultArabicFontSize = 25;

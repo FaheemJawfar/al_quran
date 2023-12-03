@@ -68,8 +68,8 @@ class _SuraVersePickerScreenState extends State<SuraVersePickerScreen> {
                     setState(() {
                       selectedSura = value + 1;
 
-                      if (selectedAyaNumber > SuraDetails.suraListAll[selectedSura - 1].totalAyas) {
-                        selectedAyaNumber = SuraDetails.suraListAll[selectedSura - 1].totalAyas;
+                      if (selectedAyaNumber > SuraDetails.suraListAll[selectedSura - 1].totalVerses) {
+                        selectedAyaNumber = SuraDetails.suraListAll[selectedSura - 1].totalVerses;
                       }
                     });
                   },
@@ -79,7 +79,7 @@ class _SuraVersePickerScreenState extends State<SuraVersePickerScreen> {
                             child: FittedBox(
                           fit: BoxFit.contain,
                           child: Text(
-                            '${sura.index}. ${sura.nameInEnglish}',
+                            '${sura.suraNumber}. ${sura.nameInEnglish}',
                             style: const TextStyle(fontSize: 16),
                           ),
                         )),
@@ -113,7 +113,7 @@ class _SuraVersePickerScreenState extends State<SuraVersePickerScreen> {
                     selectedAyaNumber = value + 1;
                   },
                   children: List.generate(
-                      SuraDetails.suraListAll[selectedSura - 1].totalAyas,
+                      SuraDetails.suraListAll[selectedSura - 1].totalVerses,
                       (index) => Center(child: Text('${index + 1}'))),
                 ),
               ),

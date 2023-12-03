@@ -37,7 +37,7 @@ class _SuraListArabicScreenState extends State<SuraListArabicScreen> {
 
                 return ListTile(
                   leading: Text(
-                    '${sura.index}. ',
+                    '${sura.suraNumber}. ',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 22,
@@ -53,14 +53,14 @@ class _SuraListArabicScreenState extends State<SuraListArabicScreen> {
                     ),
                   ),
                   subtitle:
-                      Text('${HomeTexts.verseCount} ${sura.totalAyas}'),
+                      Text('${HomeTexts.verseCount} ${sura.totalVerses}'),
                   trailing: Image.asset(
-                    'assets/images/sura_headers/Surah_${sura.index}.png',
+                    'assets/images/sura_headers/Surah_${sura.suraNumber}.png',
                     color:
                         quranProvider.isDarkMode ? Colors.white : Colors.black,
                   ),
                   onTap: () {
-                    quranProvider.selectedSuraNumber = sura.index;
+                    quranProvider.selectedSuraNumber = sura.suraNumber;
                     Navigator.push(
                       context,
                       MaterialPageRoute(

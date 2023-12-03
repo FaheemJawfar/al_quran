@@ -77,7 +77,7 @@ class VerseHelper {
       }
 
       int loopLimit =
-          suraDetails.totalAyas < 100 ? suraDetails.totalAyas : 100;
+          suraDetails.totalVerses < 100 ? suraDetails.totalVerses : 100;
 
       for (int i = 1; i < loopLimit; i++) {
         final translationAya =
@@ -88,7 +88,7 @@ class VerseHelper {
         suraFullText.write(verseText);
       }
 
-      if (suraDetails.totalAyas > loopLimit) {
+      if (suraDetails.totalVerses > loopLimit) {
         suraFullText.write('\n\n*****');
         suraFullText.write('\n\n${ReadQuranTexts.downloadQuranApp}');
       }
@@ -96,9 +96,9 @@ class VerseHelper {
       suraFullText.write('\n\n------------');
       suraFullText.write('\n${ReadQuranTexts.quranTranslation}');
       suraFullText
-          .write('\n${ReadQuranTexts.chapter}:${suraDetails.index}');
+          .write('\n${ReadQuranTexts.chapter}:${suraDetails.suraNumber}');
       suraFullText.write(
-          '\n${ReadQuranTexts.totalVerseCount}: ${suraDetails.totalAyas}');
+          '\n${ReadQuranTexts.totalVerseCount}: ${suraDetails.totalVerses}');
       suraFullText.write(
           '\n${ReadQuranTexts.translatedBy}: ${quranProvider.translations[quranProvider.selectedTranslation]}');
       suraFullText.write(

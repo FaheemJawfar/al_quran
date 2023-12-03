@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import '../app_config/color_config.dart';
-import '/read_quran/pj_thafseer_content.dart';
 import '/read_quran/thafseer.dart';
 import '/read_quran/thafseer_popup.dart';
-import '/read_quran/tntj_thafseer_content.dart';
 import '../app_texts/read_quran_texts.dart';
 import 'quran_helper.dart';
 import 'verse_helper.dart';
@@ -38,46 +36,7 @@ class ShowVerse extends StatefulWidget {
 class _ShowVerseState extends State<ShowVerse> {
   late final quranProvider = Provider.of<QuranProvider>(context, listen: true);
 
-
-  // void seekTo(Duration position) {
-  //   QuranAudioPlayerHelper.audioPlayer.seek(position);
-  // }
-
   TextSpan getArabicAyaList(QuranAya quranAya) {
-    if (quranProvider.isPJMode) {
-      List<int> intList = quranAya.ayaNumberList
-          .split(',')
-          .map((str) => int.parse(str))
-          .toList();
-
-      List<InlineSpan> spans = [];
-
-      for (int ayaNumber in intList) {
-        spans.add(
-          TextSpan(
-            text: quranProvider
-                .filterOneAyaArabic(quranAya.suraIndex, ayaNumber)
-                .text,
-            style: TextStyle(
-              fontSize: quranProvider.arabicFontSize,
-              fontFamily: quranProvider.arabicFont,
-              color: quranProvider.isDarkMode ? Colors.white : Colors.black,
-            ),
-          ),
-        );
-        spans.add(
-          TextSpan(
-            text: '${QuranHelper.getVerseEndSymbol(ayaNumber)} ',
-            style: TextStyle(
-              fontSize: 18,
-              color: quranProvider.isDarkMode ? Colors.white : Colors.black,
-            ),
-          ),
-        );
-      }
-
-      return TextSpan(children: spans);
-    } else {
       return TextSpan(
         children: [
           TextSpan(
@@ -98,85 +57,9 @@ class _ShowVerseState extends State<ShowVerse> {
         ],
       );
     }
-  }
 
-  RichText getTranslationWithTappableNumbers(String text) {
-    if (quranProvider.isPJMode) {
-      final regex =
-          RegExp(r'\d+'); // This regex matches one or more digits in the text.
 
-      final matches = regex.allMatches(text);
-
-      final spans = <InlineSpan>[];
-      int previousMatchEnd = 0;
-
-      for (final match in matches) {
-        if (match.start > previousMatchEnd) {
-          // Add non-tappable text before the number
-          spans.add(TextSpan(
-            text: text.substring(previousMatchEnd, match.start),
-            style: TextStyle(
-              fontSize: quranProvider.tamilFontSize,
-              fontFamily: quranProvider.tamilFont,
-              color: quranProvider.isDarkMode ? Colors.white : Colors.black,
-            ),
-          ));
-        }
-
-        // Wrap the number and position it above the text using a Stack
-        spans.add(
-          WidgetSpan(
-            child: Stack(
-              children: [
-                Text(
-                  text.substring(match.start, match.end),
-                  style: TextStyle(
-                    fontSize: quranProvider.tamilFontSize * 0.8,
-                    // Adjust the size as needed
-                    fontFamily: 'NotoSansTamil',
-                    color: quranProvider.isDarkMode ? Colors.white70 : Colors.green.shade800,
-                    // fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Positioned(
-                  top: -quranProvider.tamilFontSize * 0.4,
-                  // Adjust the position as needed
-                  child: GestureDetector(
-                    child: Container(
-                      color: Colors.transparent,
-                      width: 150.0, // Adjust the width as needed
-                      height: 150.0, // Adjust the height as needed
-                    ),
-                    onTap: () {
-                      int tappedNumber =
-                          int.parse(text.substring(match.start, match.end));
-
-                      showExplanationPopup(context, tappedNumber);
-                    },
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-
-        previousMatchEnd = match.end;
-      }
-
-      // Add any remaining non-tappable text after the last number
-      if (previousMatchEnd < text.length) {
-        spans.add(TextSpan(
-          text: text.substring(previousMatchEnd),
-          style: TextStyle(
-            fontSize: quranProvider.tamilFontSize,
-            fontFamily: quranProvider.tamilFont,
-            color: quranProvider.isDarkMode ? Colors.white : Colors.black,
-          ),
-        ));
-      }
-
-      return RichText(text: TextSpan(children: spans));
-    } else {
+  RichText getTranslation(String text) {
       return RichText(
           text: TextSpan(
         text: widget.quranAyaTranslation.text,
@@ -186,7 +69,6 @@ class _ShowVerseState extends State<ShowVerse> {
           color: quranProvider.isDarkMode ? Colors.white : Colors.black,
         ),
       ));
-    }
   }
 
   @override
@@ -230,7 +112,7 @@ class _ShowVerseState extends State<ShowVerse> {
                 quranProvider.addBookmark(
                   Bookmark(
                     suraNumber: quranProvider.selectedSuraNumber.toString(),
-                    verseNumber:getFirstVerseInList( widget.quranAyaTranslation.ayaNumberList).toString(),
+                    verseNumber:widget.quranAyaTranslation.ayaIndex.toString(),
                   ),
                   context,
                 );
@@ -295,9 +177,6 @@ class _ShowVerseState extends State<ShowVerse> {
           padding: const EdgeInsets.only(left: 10, right: 10),
           child: _buildOptionsRow(),
         ),
-        // const SizedBox(
-        //   height: 12,
-        // ),
         Align(
           alignment: Alignment.topLeft,
           child: Padding(
@@ -329,7 +208,7 @@ class _ShowVerseState extends State<ShowVerse> {
                 ),
               ),
               const SizedBox(height: 8),
-              getTranslationWithTappableNumbers(
+              getTranslation(
                   widget.quranAyaTranslation.text),
             ],
           ),
@@ -341,11 +220,6 @@ class _ShowVerseState extends State<ShowVerse> {
   Widget buildBismi() {
     String bismiArabic = quranProvider.bismillahArabic.text;
     String bismiTamil =  quranProvider.bismillahTranslation.text;
-
-    if(quranProvider.selectedTranslation == 'tntj'){
-      RegExp numberPattern = RegExp(r'\d+');
-      bismiTamil = bismiTamil.replaceAll(numberPattern, '');
-    }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -383,28 +257,22 @@ class _ShowVerseState extends State<ShowVerse> {
     );
   }
 
-  void showExplanationPopup(BuildContext context, int tappedNumber) {
-    List thafseerList = quranProvider.selectedTranslation == 'pj'
-        ? PJThafseerContent.thafseerList
-        : quranProvider.selectedTranslation == 'tntj'
-        ? TNTJThafseerContent.thafseerList
-        : [];
-    Thafseer selectedItem = Thafseer.getSelectedExplanation(tappedNumber, thafseerList);
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return ThafseerPopup(
-        selectedThafseer: selectedItem);
-      },
-    );
-  }
+  // void showExplanationPopup(BuildContext context, int tappedNumber) {
+  //   List thafseerList = quranProvider.selectedTranslation == 'pj'
+  //       ? PJThafseerContent.thafseerList
+  //       : quranProvider.selectedTranslation == 'tntj'
+  //       ? TNTJThafseerContent.thafseerList
+  //       : [];
+  //   Thafseer selectedItem = Thafseer.getSelectedExplanation(tappedNumber, thafseerList);
+  //   showDialog(
+  //     context: context,
+  //     builder: (BuildContext context) {
+  //       return ThafseerPopup(
+  //       selectedThafseer: selectedItem);
+  //     },
+  //   );
+  // }
   
   
-  int getFirstVerseInList(String ayaList){
-    List<int> allVerses = ayaList.split(',')
-        .map((str) => int.parse(str))
-        .toList();
-    
-    return allVerses.first;
-  }
+
 }

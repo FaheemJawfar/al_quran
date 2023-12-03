@@ -212,7 +212,7 @@ class _QuranAudioPlayerScreenState extends State<QuranAudioPlayerScreen> {
             itemBuilder: (context, index) {
               return ListTile(
                 title: Text(
-                  '${SuraDetails.suraListAll[index].index}. ${getSuraName(index)}',
+                  '${SuraDetails.suraListAll[index].suraNumber}. ${getSuraName(index)}',
                   style: TextStyle(
                       color: selectedSuraIndex == index
                           ? Colors.white
