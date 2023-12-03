@@ -171,11 +171,7 @@ class _QuranAudioPlayerScreenState extends State<QuranAudioPlayerScreen> {
 
   String getSuraName(int index) {
     SuraDetails selectedSura = SuraDetails.suraListAll[index];
-
-    if (selectedSura.tamilMeaning != null) {
-      return '${selectedSura.tamilName} - (${selectedSura.tamilMeaning!})';
-    }
-    return selectedSura.tamilName;
+      return '${selectedSura.nameInEnglish} - (${selectedSura.meaningOfName})';
   }
 
   @override
@@ -216,7 +212,7 @@ class _QuranAudioPlayerScreenState extends State<QuranAudioPlayerScreen> {
             itemBuilder: (context, index) {
               return ListTile(
                 title: Text(
-                  '${SuraDetails.suraListAll[index].suraNumber}. ${getSuraName(index)}',
+                  '${SuraDetails.suraListAll[index].index}. ${getSuraName(index)}',
                   style: TextStyle(
                       color: selectedSuraIndex == index
                           ? Colors.white

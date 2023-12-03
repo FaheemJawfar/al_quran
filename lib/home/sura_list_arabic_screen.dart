@@ -33,11 +33,11 @@ class _SuraListArabicScreenState extends State<SuraListArabicScreen> {
                     quranProvider.isDarkMode ? null : ColorConfig.primaryColor,
               ),
               itemBuilder: (BuildContext context, int index) {
-                final sura = quranProvider.selectedTranslation == 'pj' ? SuraDetails.suraListPj[index] :SuraDetails.suraListAll[index];
+                final sura = SuraDetails.suraListAll[index];
 
                 return ListTile(
                   leading: Text(
-                    '${sura.suraNumber}. ',
+                    '${sura.index}. ',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 22,
@@ -45,7 +45,7 @@ class _SuraListArabicScreenState extends State<SuraListArabicScreen> {
                     ),
                   ),
                   title: Text(
-                    sura.tamilName,
+                    sura.nameInEnglish,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
@@ -53,14 +53,14 @@ class _SuraListArabicScreenState extends State<SuraListArabicScreen> {
                     ),
                   ),
                   subtitle:
-                      Text('${HomeTexts.verseCount} ${sura.verseCount}'),
+                      Text('${HomeTexts.verseCount} ${sura.totalAyas}'),
                   trailing: Image.asset(
-                    'assets/images/sura_headers/Surah_${sura.suraNumber}.png',
+                    'assets/images/sura_headers/Surah_${sura.index}.png',
                     color:
                         quranProvider.isDarkMode ? Colors.white : Colors.black,
                   ),
                   onTap: () {
-                    quranProvider.selectedSuraNumber = sura.suraNumber;
+                    quranProvider.selectedSuraNumber = sura.index;
                     Navigator.push(
                       context,
                       MaterialPageRoute(

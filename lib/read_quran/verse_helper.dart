@@ -67,7 +67,7 @@ class VerseHelper {
       StringBuffer suraFullText = StringBuffer();
 
       String header =
-          '${suraDetails.tamilName}${suraDetails.tamilMeaning != null ? ' - (${suraDetails.tamilMeaning})' : ''}';
+          '${suraDetails.nameInEnglish} - (${suraDetails.meaningOfName}';
 
       suraFullText.write('$header\n${'-' * header.length}\n');
 
@@ -77,7 +77,7 @@ class VerseHelper {
       }
 
       int loopLimit =
-          suraDetails.verseCount < 100 ? suraDetails.verseCount : 100;
+          suraDetails.totalAyas < 100 ? suraDetails.totalAyas : 100;
 
       for (int i = 1; i < loopLimit; i++) {
         final translationAya =
@@ -88,7 +88,7 @@ class VerseHelper {
         suraFullText.write(verseText);
       }
 
-      if (suraDetails.verseCount > loopLimit) {
+      if (suraDetails.totalAyas > loopLimit) {
         suraFullText.write('\n\n*****');
         suraFullText.write('\n\n${ReadQuranTexts.downloadQuranApp}');
       }
@@ -96,9 +96,9 @@ class VerseHelper {
       suraFullText.write('\n\n------------');
       suraFullText.write('\n${ReadQuranTexts.quranTranslation}');
       suraFullText
-          .write('\n${ReadQuranTexts.chapter}:${suraDetails.suraNumber}');
+          .write('\n${ReadQuranTexts.chapter}:${suraDetails.index}');
       suraFullText.write(
-          '\n${ReadQuranTexts.totalVerseCount}: ${suraDetails.verseCount}');
+          '\n${ReadQuranTexts.totalVerseCount}: ${suraDetails.totalAyas}');
       suraFullText.write(
           '\n${ReadQuranTexts.translatedBy}: ${quranProvider.translations[quranProvider.selectedTranslation]}');
       suraFullText.write(

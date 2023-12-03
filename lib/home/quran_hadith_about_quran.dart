@@ -21,112 +21,146 @@ class AboutQuranReferences {
   static List<AboutQuranReferences> listOfVersesAndHadhiths = [
     AboutQuranReferences(
       quote:
-          "இந்தக் குர்ஆன் நேரானதற்கு வழி காட்டுகிறது. “நம்பிக்கை கொண்டு நல்லறங்கள் செய்வோருக்கு பெரிய கூலி உள்ளது” என்று நற்செய்தியும் கூறுகிறது.",
-      reference: "(அல்குர்ஆன் 17:9)",
+      "Ramaḍân is the month in which the Quran was revealed as a guide for humanity with clear proofs of guidance and the standard ˹to distinguish between right and wrong.",
+      reference: "(Al-Quran 2:185)",
     ),
     AboutQuranReferences(
       quote:
-          "(பொய்யையும் உண்மையையும்) பிரித்துக் காட்டும் வழி முறையை அகிலத்தாருக்கு எச்சரிக்கை செய்யக் கூடியதாக தனது அடியார் மீது அருளியவன் பாக்கியமானவன்.",
-      reference: "(அல்குர்ஆன் 25:1)",
+      "Indeed, this Qur’ān guides to that which is most suitable and gives good tidings to the believers who do righteous deeds that they will have a great reward",
+      reference: "(Al-Quran 17:9)",
     ),
     AboutQuranReferences(
       quote:
-          "குர்ஆன் ஓதப்படும் போது அதைச் செவிமடுங்கள்! வாய் மூடுங்கள்! நீங்கள் அருள் செய்யப் படுவீர்கள்!",
-      reference: "(அல்குர்ஆன் 7:204)",
+      "Blessed is He who sent down the Criterion upon His Servant that he may be to the worlds a warner.",
+      reference: "(Al-Quran 25:1)",
     ),
     AboutQuranReferences(
       quote:
-          "நிச்சயமாக இக்குர்ஆனை நன்கு நினைவு படுத்திக் கொள்ளும் பொருட்டே எளிதாக்கி வைத்திருக்கின்றோம்; எனவே இதிலிருந்து நல்லுணர்வு பெறுவோர் உண்டா?",
-      reference: "(அல்குர்ஆன் 54:32)",
+      "So when the Qur’ān is recited, then listen to it and pay attention that you may receive mercy.",
+      reference: "(Al-Quran 7:204)",
     ),
     AboutQuranReferences(
       quote:
-          "மேலும் அவர்கள் இந்தக் குர்ஆனை ஆராய்ந்து பார்க்க வேண்டாமா? அல்லது அவர்கள் இருதயங்கள் (இருக்கின்றனவே) அவற்றின் மீது பூட்டுப் போடப்பட்டு விட்டனவா?",
-      reference: "(அல்குர்ஆன் 47:24)",
+      "And We have certainly made the Qur’ān easy for remembrance, so is there any who will remember?",
+      reference: "(Al-Quran 54:32)",
+    ),
+    AboutQuranReferences(
+      quote:
+      "Then do they not reflect upon the Qur’ān, or are there locks upon [their] hearts?",
+      reference: "(Al-Quran 47:24)",
     ),
 
     AboutQuranReferences(
       quote:
-          "இன்னும், நாம் முஃமின்களுக்கு ரஹ்மத்தாகவும், அருமருந்தாகவும் உள்ளவற்றையே குர்ஆனில் (படிப்படியாக) இறக்கிவைத்தோம் ஆனால் அக்கிரமக் காரர்களுக்கோ இழப்பைத் தவிர வேறெதையும் (இது) அதிகமாக்குவதில்லை.",
-      reference: "(அல்குர்ஆன் 17:82)",
+      "And We send down of the Qur’ān that which is healing and mercy for the believers, but it does not increase the wrongdoers except in loss.",
+      reference: "(Al-Quran 17:82)",
     ),
     AboutQuranReferences(
       quote:
-          "இது அகிலத்தாரின் இறைவனிடமிருந்து அருளப்பட்டது. சில சொற்களை இவர் (முஹம்மது) நம்மீது இட்டுக்கட்டியிருந்தால் வலது கையால் இவரைத் தண்டித்திருப்போம். பின்னர் அவரது நாடி நரம்பைத் துண்டித்திருப்போம்.",
-      reference: "(திருக்குர்ஆன் 69:43-46)",
-    ),
-    AboutQuranReferences(
-      quote:
-          "உயிருடன் உள்ளவரை எச்சரிப்பதற்காகவும், (நம்மை) மறுப்போருக்கு எதிரான கட்டளை உறுதியாவதற்காகவும் (இதை அருளினோம்).",
-      reference: "(திருக்குர்ஆன் 36:70)",
-    ),
-    AboutQuranReferences(
-      quote:
-          "குர்ஆனை ஓதும் போது விரட்டப்பட்ட ஷைத்தானை விட்டும் அல்லாஹ்விடம் பாதுகாப்புத் தேடிக்கொள்வீராக!",
-      reference: "(திருக்குர்ஆன் 16:98)",
-    ),
-    AboutQuranReferences(
-      quote:
-          "நிச்சயமாக நாம் தான் (நினைவூட்டும்) இவ்வேதத்தை (உம்மீது) இறக்கி வைத்தோம்; நிச்சயமாக நாமே அதன் பாதுகாவலனாகவும் இருக்கின்றோம்.",
-      reference: "(திருக்குர்ஆன் 15:9)",
-    ),
-    AboutQuranReferences(
-      quote:
-          "(ஏகஇறைவனை) மறுப்போர் வெறுத்த போதும் நீங்கள் வணக்கத்தை அல்லாஹ்வுக்கே தூய எண்ணத்துடன் உரித்தாக்கி அவனிடமே பிரார்த்தியுங்கள்!",
-      reference: "(திருக்குர்ஆன் 40:14)",
-    ),
-    AboutQuranReferences(
-      quote: "மேலும் குர்ஆனைத் தெளிவாகவும் நிறுத்தி நிதானமாகவும் ஓதுவீராக!",
-      reference: "(திருக்குர்ஆன் 73:4)",
-    ),
-    AboutQuranReferences(
-      quote:
-          "அலிஃப், லாம், ரா. மனிதர்களை அவர்களது இறைவனின் விருப்பப்படி இருள்களிலிருந்து வெளிச்சத்திற்கும், புகழுக்குரிய மிகைத்தவனின் பாதைக்கும் நீர் கொண்டு செல்வதற்காக உமக்கு இவ்வேதத்தை அருளினோம்.",
-      reference: "(திருக்குர்ஆன் 14:1)",
+      "[It is] a revelation from the Lord of the worlds. And if he [i.e., Muḥammad] had made up about Us some [false] sayings, We would have seized him by the right hand; Then We would have cut from him the aorta.",
+      reference: "(Al-Quran 69:43-46)",
     ),
 
     AboutQuranReferences(
       quote:
-          "\"நீங்கள் குர்ஆனை ஓதுங்கள். நிச்சயமாக அது மறுமை நாளில் அதைச் சார்ந்தவருக்குப் பரிந்துரையாக வரும்\". \n- முஹம்மது நபி (ஸல்)",
-      reference: "(நூல் : முஸ்லிம்-1470)",
+      "So when you recite the Qur’ān, [first] seek refuge in Allāh from Satan, the expelled [from His mercy].",
+      reference: "(Al-Quran 16:98)",
     ),
     AboutQuranReferences(
-        quote:
-            "உங்களில் சிறந்தவர் யார் என்றால், யார் குர்ஆனைத் தானும் கற்று, பிறருக்கும் கற்றுக் கொடுக்கின்றாரோ அவர் தான்.\n- முஹம்மது நபி (ஸல்)",
-        reference: "(ஆதாரம் : புகாரி-5027)"),
+      quote:
+      "Indeed, it is We who sent down the message [i.e., the Qur’ān], and indeed, We will be its guardian.",
+      reference: "(Al-Quran 15:9)",
+    ),
     AboutQuranReferences(
-        quote:
-            "\"உங்கள் வீடுகளை மண்ணறைகளாக ஆக்கி விடாதீர்கள். எந்த வீட்டில் சூரத்துல் பகரா ஓதப்படுகின்றதோ அந்த வீட்டை விட்டு ஷைத்தான் விரண்டு ஓடுகின்றான்\".\n- முஹம்மது நபி (ஸல்)",
-        reference: "(ஆதாரம் : முஸ்லிம்-1430)"),
+      quote: "Or add to it, and recite the Qur’ān with measured recitation.",
+      reference: "(Al-Quran 73:4)",
+    ),
+    AboutQuranReferences(
+      quote:
+      "Alif, Lām, Rā. [This is] a Book which We have revealed to you, [O Muḥammad], that you might bring mankind out of darknesses into the light by permission of their Lord - to the path of the Exalted in Might, the Praiseworthy",
+      reference: "(Al-Quran 14:1)",
+    ),
+
+    ///More verses
 
     AboutQuranReferences(
         quote:
-            "நபி(ஸல்) அவர்களுக்கு ஒவ்வொரு வருடமும் ரமலானில் ஒரு தடவை குர்ஆனை ஓதிக் காண்பிக்கப்பட்டது. அவர்கள் மரணிக்கும் வருடம் இரண்டு தடவை ஓதிக் காண்பிக்கப்பட்டது.\n- அறிவிப்பவர்: அபூஹுரைரா(ரலி)",
-        reference: "(ஆதாரம் : புகாரி)"),
+        "This is the Book about which there is no doubt, a guidance for those conscious of Allāh",
+        reference: "(Al-Quran 2:2)"),
+
     AboutQuranReferences(
-        quote:
-            "\"குர்ஆனின் விஷயத்தில் தர்க்கம் புரிவது இறை மறுப்புச் செயலாகும்\".\n- முஹம்மது நபி (ஸல்)",
-        reference: "(ஆதாரம் : அபூதாவூத்)"),
-    AboutQuranReferences(
-        quote:
-            "\"இவ்வேதத்தைக் கொண்டே அல்லாஹ் சில கூட்டத்தாரை உயர்த்துகிறான். மற்றோரு கூட்டத்தினரை இதனைக் கொண்டே தாழ்த்துகிறான். சமுதாய உயர்வு, தாழ்வுக்கு காரணம் குர்ஆனே\".\n- முஹம்மது நபி (ஸல்)",
-        reference: "(ஆதாரம் : முஸ்லிம்)"),
-    AboutQuranReferences(
-        quote:
-            "\"எவரது உள்ளத்தில் குர்ஆனின் சிறு பகுதியேனும் மனனம் இல்லையோ அவரது உள்ளம் பாழடைந்த வீட்டைப் போன்றதாகும்\".\n- முஹம்மது நபி (ஸல்)",
-        reference: "(ஆதாரம் : திர்மிதி)"),
-    AboutQuranReferences(
-        quote:
-            "\"நபியவர்கள் மஃரிப் தொழுகையில் அத்தூர் அத்தியாயத்தை ஓதிடக் கேட்டேன். நபியவர்களை விட அழகிய குரலுடைய ஒருவரை அல்லது அழகாக ஓதுபவரை நான் கேட்டதில்லை\"\n- அறிவிப்பவர்: ஜுபைர் பின் முத்இம் (ரலி)",
-        reference: "(புகாரி, முஸ்லிம்)"),
+        quote: "Then upon Us is its clarification [to you].",
+        reference: "(Al-Quran 75:19)"),
 
     AboutQuranReferences(
         quote:
-            "\"நீங்கள் படுக்கைக்குச் செல்லும் போது ஆயத்துல் குர்ஸியை ஓதுங்கள். உங்களுடன் ஒரு பாதுகாவலர் (வானவர்) இருந்து கொண்டே இருப்பார். காலை வரை ஷைத்தான் உங்களை நெருங்க மாட்டான்\".\n- முஹம்மது நபி (ஸல்)",
-        reference: "(ஆதாரம் : புஹாரி 3275)"),
+        "Follow, [O mankind], what has been revealed to you from your Lord and do not follow other than Him any allies. Little do you remember.",
+        reference: "(Al-Quran 7:3)"),
+
     AboutQuranReferences(
         quote:
-            "\"ஒவ்வொரு இறைத் தூதரும் அற்புதங்களுடன் அனுப்பப்பட்டனர். எனக்கு வழங்கப்பட்ட அற்புதம் திருக்குர்ஆன்\".\n- முஹம்மது நபி (ஸல்)",
-        reference: "(ஆதாரம் : புகாரி 4981,7274)")
+        "And follow what is revealed to you, [O Muḥammad], and be patient until Allāh will judge. And He is the best of judges.",
+        reference: "(Al-Quran 10:109)"),
+
+    AboutQuranReferences(
+        quote:
+        "So when We have recited it [through Gabriel], then follow its recitation.",
+        reference: "(Al-Quran 75:18)"),
+
+    AboutQuranReferences(
+        quote:
+        "And this [Qur’ān] is a Book We have revealed [which is] blessed, so follow it and fear Allāh that you may receive mercy.",
+        reference: "(Al-Quran 6:155)"),
+
+    AboutQuranReferences(
+        quote:
+        "...And whoever does not judge by what Allāh has revealed - then it is those who are the disbelievers.",
+        reference: "(Al-Quran 5:44)"),
+
+    AboutQuranReferences(
+        quote:
+        "Then do they not reflect upon the Qur’ān? If it had been from [any] other than Allāh, they would have found within it much contradiction.",
+        reference: "(Al-Quran 4:82)"),
+
+    AboutQuranReferences(
+        quote:
+        "And We have certainly diversified [the contents] in this Qur’ān that they [i.e., mankind] may be reminded, but it does not increase them [i.e., the disbelievers] except in aversion.",
+        reference: "(Al-Quran 17:41)"),
+
+    AboutQuranReferences(
+        quote:
+        "And We have not revealed to you the Book, [O Muḥammad], except for you to make clear to them that wherein they have differed and as guidance and mercy for a people who believe.",
+        reference: "(Al-Quran 16:64)"),
+
+    AboutQuranReferences(
+      quote:
+      "\"[Whoever recites a letter] from Allah's Book, then he receives the reward from it, and the reward of ten the like of it. I do not say that Alif Lam Mim is a letter, but Alif is a letter, Lam is a letter and Mim is a letter.\". \n- The Messenger of Allah (ﷺ)",
+      reference: "(Reference : Jami` at-Tirmidhi 2910)",
+    ),
+
+    AboutQuranReferences(
+        quote:
+        "The best among you [Muslims] are those who learn the Qur’an and teach it. \n- The Messenger of Allah (ﷺ)",
+        reference: "(Reference : Al-Bukhari)"),
+
+    AboutQuranReferences(
+        quote:
+        "Recite the Qur’an, for it will come as an intercessor for its reciters on the Day of Resurrection. \n- The Messenger of Allah (ﷺ)",
+        reference: "(Reference : Muslim)"),
+
+    AboutQuranReferences(
+        quote:
+        "A person who has nothing of the Qur’an in his heart is like a ruined house. \n- The Messenger of Allah (ﷺ)",
+        reference: "(Reference : At-Tirmidhi)"),
+
+    AboutQuranReferences(
+        quote:
+        "Recite the Qur’an, for it will come as an intercessor for its reciters on the Day of Resurrection. \n- The Messenger of Allah (ﷺ)",
+        reference: "(Reference : Muslim)"),
+
+    AboutQuranReferences(
+        quote:
+        "Recite the Qur’an, for it will come as an intercessor for its reciters on the Day of Resurrection. \n- The Messenger of Allah (ﷺ)",
+        reference: "(Reference : Muslim)"),
   ];
 }

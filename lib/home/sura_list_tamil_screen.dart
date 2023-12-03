@@ -74,11 +74,11 @@ class _SuraListTamilScreenState extends State<SuraListTamilScreen> {
           color: quranProvider.isDarkMode ? null : ColorConfig.primaryColor,
         ),
         itemBuilder: (BuildContext context, int index) {
-          final suraDetails = quranProvider.selectedTranslation == 'pj' ? SuraDetails.suraListPj[index] : SuraDetails.suraListAll[index];
+          final suraDetails = SuraDetails.suraListAll[index];
 
           return ListTile(
             leading: Text(
-              '${suraDetails.suraNumber}.',
+              '${suraDetails.index}.',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 22,
@@ -86,7 +86,7 @@ class _SuraListTamilScreenState extends State<SuraListTamilScreen> {
               ),
             ),
             title: Text(
-              '${suraDetails.tamilName} ${suraDetails.tamilMeaning != null ? '(${suraDetails.tamilMeaning})' : ''}',
+              '${suraDetails.nameInEnglish} ${suraDetails.meaningOfName}',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
@@ -94,13 +94,13 @@ class _SuraListTamilScreenState extends State<SuraListTamilScreen> {
               ),
             ),
             subtitle:
-                Text('${HomeTexts.verseCount} ${suraDetails.verseCount}'),
+                Text('${HomeTexts.verseCount} ${suraDetails.totalAyas}'),
             trailing: Image.asset(
-              'assets/images/sura_headers/Surah_${suraDetails.suraNumber}.png',
+              'assets/images/sura_headers/Surah_${suraDetails.index}.png',
               color: quranProvider.isDarkMode ? Colors.white : Colors.black,
             ),
             onTap: () {
-              quranProvider.selectedSuraNumber = suraDetails.suraNumber;
+              quranProvider.selectedSuraNumber = suraDetails.index;
               Navigator.push(
                 context,
                 MaterialPageRoute(
