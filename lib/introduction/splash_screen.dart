@@ -8,7 +8,7 @@ import '../app_texts/home_texts.dart';
 import 'quran_hadith_about_quran.dart';
 import '../common_widgets/loading_indicator.dart';
 import '../providers/quran_provider.dart';
-import 'home_screen.dart';
+import '../home/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

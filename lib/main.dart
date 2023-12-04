@@ -1,10 +1,11 @@
+import 'package:al_quran/introduction/setup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:provider/provider.dart';
 import 'app_config/app_config.dart';
 import 'utils/shared_preferences.dart';
 import '../providers/quran_provider.dart';
-import 'home/splash_screen.dart';
+import 'introduction/splash_screen.dart';
 
 
 Future<void> main() async {
@@ -36,7 +37,8 @@ class MyApp extends StatelessWidget {
             title: AppConfig.appName,
             debugShowCheckedModeBanner: false,
             theme: context.watch<QuranProvider>().quranTheme,
-            home: const SplashScreen(),
+           // home: const SplashScreen(),
+            home: OnBoardingPage(),
           );
         }
       ),
