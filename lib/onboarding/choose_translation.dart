@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../translation/translation.dart';
 
 class ChooseTranslationScreen extends StatefulWidget {
@@ -44,3 +43,5 @@ class _ChooseTranslationScreenState extends State<ChooseTranslationScreen> {
     );
   }
 }
+
+
