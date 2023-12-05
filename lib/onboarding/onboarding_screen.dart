@@ -1,7 +1,7 @@
-import 'package:al_quran/translation/translation.dart';
+import 'package:al_quran/onboarding/choose_language.dart';
+import 'package:al_quran/onboarding/choose_translation.dart';
+import 'package:al_quran/onboarding/welcome_onboarding.dart';
 import 'package:flutter/material.dart';
-import 'size_config.dart';
-import 'onboarding_contents.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -48,68 +48,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
 
   List<Widget> onboardingPages = [
-    Column(
-      children: [
-        Image.asset(
-          'assets/icon/quran_icon.png',
-          height: 200,
-        ),
-        SizedBox(
-          height: 30,
-        ),
-        Text(
-          'Assalamu Alaikum!',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            // fontFamily: "Mulish",
-            fontWeight: FontWeight.w600,
-            fontSize: 30,
-          ),
-        ),
-        const SizedBox(height: 15),
-        Text(
-          'Please setup your translation language and choose a translation.',
-          style: TextStyle(
-            //   fontFamily: "Mulish",
-            fontWeight: FontWeight.w300,
-            fontSize:17,
-          ),
-          textAlign: TextAlign.center,
-        )
-      ],
-    ),
-    Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          'Choose your translation language',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            // fontFamily: "Mulish",
-            fontWeight: FontWeight.w600,
-            fontSize: 22,
-          ),
-        ),
-        const SizedBox(height: 15),
-        Expanded(
-          child: Material(
-            child: ListView.builder(
-              itemCount: Translation.uniqueLanguages().length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  onTap: () {
-
-                  },
-                  tileColor: Colors.transparent,
-                  title: Text(Translation.uniqueLanguages()[index]),
-                );
-              },
-            ),
-          ),
-        ),
-      ],
-    ),
-    Text('3rd Page')
+    const WelcomeOnboarding(),
+    const ChooseLanguageScreen(),
+    const ChooseTranslationScreen()
   ];
 
 
@@ -163,11 +104,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50),
                         ),
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                             horizontal: 100, vertical: 20),
 
                         textStyle:
-                        TextStyle(fontSize:  13 ),
+                        const TextStyle(fontSize:  13 ),
                       ),
                       child: const Text("START"),
                     ),
@@ -206,9 +147,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               borderRadius: BorderRadius.circular(50),
                             ),
                             elevation: 0,
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 30, vertical: 20),
-                            textStyle: TextStyle(
+                            textStyle: const TextStyle(
                                 fontSize: 13 ),
                           ),
                           child: const Text("NEXT"),
