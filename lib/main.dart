@@ -1,4 +1,4 @@
-import 'package:al_quran/introduction/setup_screen.dart';
+import 'package:al_quran/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:provider/provider.dart';
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: context.watch<QuranProvider>().quranTheme,
            // home: const SplashScreen(),
-            home: OnBoardingPage(),
+            home: OnboardingScreen(),
           );
         }
       ),

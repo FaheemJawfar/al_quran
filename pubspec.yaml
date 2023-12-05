@@ -49,8 +49,7 @@ dependencies:
   device_info_plus: ^9.0.3
   just_audio_background: ^0.0.1-beta.10
   path_provider: ^2.1.1
-  introduction_screen: ^3.1.12
-  dots_indicator: ^2.1.2
+
 
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1
