@@ -70,7 +70,7 @@ class _ReadThafseerScreenState extends State<ReadThafseerScreen> {
               onPressed: () {
               String textToShare = '$header\n${'-' * header.length}\n\n${widget.selectedThafseer.content}\n\n${'-' * header.length}\nதிருக்குர்ஆன் தமிழாக்கம்: ${widget.writtenBy},\nவிளக்கக் குறிப்பு: ${widget.selectedThafseer.index}';
               VerseHelper.copyText(textToShare);
-              ShowToast.showToast(context, 'விளக்கக் குறிப்பு பிரதி செய்யப்பட்டது!');
+              ShowToast.show(context, 'விளக்கக் குறிப்பு பிரதி செய்யப்பட்டது!');
 
           }, icon: const Icon(Icons.copy_all)),
         ],

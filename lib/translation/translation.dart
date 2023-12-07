@@ -69,6 +69,15 @@ class Translation {
     return uniqueLanguages;
   }
 
+
+  static List<Map<String, dynamic>> findTranslationsByLanguage(String language) {
+    return metadata
+        .where((translation) => translation['language'] == language)
+        .toList();
+  }
+
+
+
   static final metadata = [
     {
       "language": "Albanian",

@@ -11,6 +11,10 @@ import '../read_quran/quran_aya.dart';
 import '../quran_audio/reciter.dart';
 
 class QuranProvider extends ChangeNotifier {
+  //Onboarding
+  String? onboardSelectedLanguage;
+  String? onboardSelectedTranslation;
+
   bool _isDarkMode = false;
 
   bool get isDarkMode => AppPreferences.getBool('isDarkMode') ?? _isDarkMode;
@@ -103,7 +107,8 @@ class QuranProvider extends ChangeNotifier {
     return bismillah;
   }
 
-  bool get isPJMode => selectedTranslation == 'pj' || selectedTranslation == 'tntj';
+  bool get isPJMode =>
+      selectedTranslation == 'pj' || selectedTranslation == 'tntj';
 
   List<QuranAya> get selectedSuraTranslation {
     List<QuranAya> content = [];
@@ -138,9 +143,13 @@ class QuranProvider extends ChangeNotifier {
     return _allSurasTamil[sura - 1].listOfAyas[aya - 1];
   }
 
-
   QuranAya filterOneAyaTranslationFromSearch(int sura, int aya) {
-    return _allSurasTamil[sura - 1].listOfAyas.firstWhere((element) => element.ayaNumberList.split(',').map((str) => int.parse(str)).toList().contains(aya));
+    return _allSurasTamil[sura - 1].listOfAyas.firstWhere((element) => element
+        .ayaNumberList
+        .split(',')
+        .map((str) => int.parse(str))
+        .toList()
+        .contains(aya));
   }
 
   TextSpan getArabicAyaListFromTranslation(
@@ -240,19 +249,17 @@ class QuranProvider extends ChangeNotifier {
         .firstWhere((reciter) => reciter.identifier == selectedReciter);
   }
 
-
   List<Bookmark> _bookmarkList = BookmarkHelper.getBookmarkList();
 
   get bookmarkList => _bookmarkList;
 
-  addBookmark(Bookmark bookmark, BuildContext context){
+  addBookmark(Bookmark bookmark, BuildContext context) {
     BookmarkHelper.addBookmark(bookmark, context);
     _bookmarkList = BookmarkHelper.getBookmarkList();
     notifyListeners();
   }
 
-
-  deleteBookmark(Bookmark bookmark, BuildContext context){
+  deleteBookmark(Bookmark bookmark, BuildContext context) {
     BookmarkHelper.deleteBookmark(bookmark, context);
     _bookmarkList = BookmarkHelper.getBookmarkList();
     notifyListeners();

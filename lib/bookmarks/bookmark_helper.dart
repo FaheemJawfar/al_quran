@@ -18,7 +18,7 @@ class BookmarkHelper {
       AppPreferences.setStringList(_bookmarkKey, bookmarkList);
     }
 
-    ShowToast.showToast(context, BookmarksTexts.bookmarkAdded);
+    ShowToast.show(context, BookmarksTexts.bookmarkAdded);
   }
 
   // Delete a bookmark from the list
@@ -30,7 +30,7 @@ class BookmarkHelper {
       bookmarkList.remove('${bookmark.suraNumber}:${bookmark.verseNumber}');
       AppPreferences.setStringList(_bookmarkKey, bookmarkList);
     }
-    ShowToast.showToast(context, BookmarksTexts.bookmarkDeleted);
+    ShowToast.show(context, BookmarksTexts.bookmarkDeleted);
   }
 
   // Get the list of bookmarks

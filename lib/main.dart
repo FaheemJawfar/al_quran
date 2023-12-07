@@ -7,7 +7,6 @@ import 'utils/shared_preferences.dart';
 import '../providers/quran_provider.dart';
 import 'introduction/splash_screen.dart';
 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await AppPreferences.initialize();
@@ -20,7 +19,6 @@ Future<void> main() async {
   runApp(const MyApp());
 }
 
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -30,18 +28,14 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => QuranProvider()),
       ],
-
-      child: Builder(
-        builder: (context) {
-          return MaterialApp(
-            title: AppConfig.appName,
-            debugShowCheckedModeBanner: false,
-            theme: context.watch<QuranProvider>().quranTheme,
-           // home: const SplashScreen(),
-            home: OnboardingScreen(),
-          );
-        }
-      ),
+      child: Builder(builder: (context) {
+        return MaterialApp(
+          title: AppConfig.appName,
+          debugShowCheckedModeBanner: false,
+          theme: context.watch<QuranProvider>().quranTheme,
+          home: OnboardingScreen(),
+        );
+      }),
     );
   }
 }

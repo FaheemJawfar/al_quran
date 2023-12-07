@@ -124,7 +124,7 @@ class _SuraTranslationScreenState extends State<SuraTranslationScreen> {
 
     if(!internetConnected){
       if(!mounted) return;
-      ShowToast.showToast(context, ReadQuranTexts.noInternet);
+      ShowToast.show(context, ReadQuranTexts.noInternet);
       setState(() {
         isPlaying = false;
       });

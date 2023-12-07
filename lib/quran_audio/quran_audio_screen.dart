@@ -152,7 +152,7 @@ class _QuranAudioPlayerScreenState extends State<QuranAudioPlayerScreen> {
         isLoading = false;
       });
       if (mounted) {
-        ShowToast.showToast(context, QuranAudioTexts.checkInternetConnection);
+        ShowToast.show(context, QuranAudioTexts.checkInternetConnection);
       }
       return false;
     }

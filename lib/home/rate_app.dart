@@ -43,7 +43,7 @@ class _RateAppState extends State<RateApp> {
                   Launcher.launchEmail(feedbackController.text);
                   Navigator.of(context).pop();
                 } else {
-                  ShowToast.showToast(context, HomeTexts.pleaseEnterFeedback);
+                  ShowToast.show(context, HomeTexts.pleaseEnterFeedback);
                 }
               },
               child: const Text(HomeTexts.ratingSubmit),

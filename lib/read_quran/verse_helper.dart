@@ -15,7 +15,7 @@ class VerseHelper {
     BuildContext context,
   ) async {
     final clipboardData = ClipboardData(text: text);
-    ShowToast.showToast(context, ReadQuranTexts.verseCopied);
+    ShowToast.show(context, ReadQuranTexts.verseCopied);
     await Clipboard.setData(clipboardData);
   }
 
@@ -107,7 +107,7 @@ class VerseHelper {
       String suraText = suraFullText.toString();
 
       final clipboardData = ClipboardData(text: suraText);
-      ShowToast.showToast(context, ReadQuranTexts.chapterCopied);
+      ShowToast.show(context, ReadQuranTexts.chapterCopied);
       await Clipboard.setData(
         clipboardData,
       );

@@ -1,7 +1,11 @@
+import 'package:al_quran/common_widgets/show_toast.dart';
 import 'package:al_quran/onboarding/choose_language.dart';
 import 'package:al_quran/onboarding/choose_translation.dart';
 import 'package:al_quran/onboarding/welcome_onboarding.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/quran_provider.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -11,13 +15,13 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  late PageController _controller;
-  bool itemSelected = false;
-  int selectedIndex = 0;
+  late PageController _pageController;
+  String? selectedLanguage;
+  late final quranProvider = Provider.of<QuranProvider>(context, listen: false);
 
   @override
   void initState() {
-    _controller = PageController();
+    _pageController = PageController();
     super.initState();
   }
 
@@ -46,20 +50,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 
-
   List<Widget> onboardingPages = [
     const WelcomeOnboarding(),
     const ChooseLanguageScreen(),
     const ChooseTranslationScreen()
   ];
 
-
-
-
-
   @override
   Widget build(BuildContext context) {
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: colors[_currentPage],
@@ -68,8 +66,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             Expanded(
               flex: 4,
               child: PageView.builder(
-                physics: const BouncingScrollPhysics(),
-                controller: _controller,
+                physics: const NeverScrollableScrollPhysics(),
+                controller: _pageController,
                 onPageChanged: (value) => setState(() => _currentPage = value),
                 itemCount: onboardingPages.length,
                 itemBuilder: (context, i) {
@@ -89,74 +87,90 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(
                       onboardingPages.length,
-                          (int index) => _buildDots(
+                      (int index) => _buildDots(
                         index: index,
                       ),
                     ),
                   ),
-                  _currentPage + 1 == onboardingPages.length
-                      ? Padding(
-                    padding: const EdgeInsets.all(30),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 100, vertical: 20),
-
-                        textStyle:
-                        const TextStyle(fontSize:  13 ),
-                      ),
-                      child: const Text("START"),
-                    ),
-                  )
-                      : Padding(
-                    padding: const EdgeInsets.all(30),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        // TextButton(
-                        //   onPressed: () {
-                        //     _controller.jumpToPage(2);
-                        //   },
-                        //   child: const Text(
-                        //     "SKIP",
-                        //     style: TextStyle(color: Colors.black),
-                        //   ),
-                        //   style: TextButton.styleFrom(
-                        //     elevation: 0,
-                        //     textStyle: TextStyle(
-                        //       fontWeight: FontWeight.w600,
-                        //       fontSize: (width <= 550) ? 13 : 17,
-                        //     ),
-                        //   ),
-                        // ),
-                        ElevatedButton(
-                          onPressed: () {
-                            _controller.nextPage(
-                              duration: const Duration(milliseconds: 200),
-                              curve: Curves.easeIn,
-                            );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(50),
+                  if (_currentPage + 1 == onboardingPages.length)
+                    Padding(
+                      padding: const EdgeInsets.all(30),
+                      child: Row(
+                        children: [
+                          TextButton(
+                            onPressed: () {
+                              _pageController.jumpToPage(1);
+                            },
+                            style: TextButton.styleFrom(
+                              elevation: 0,
+                              textStyle: const TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 13,
+                              ),
                             ),
-                            elevation: 0,
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 30, vertical: 20),
-                            textStyle: const TextStyle(
-                                fontSize: 13 ),
+                            child: const Text(
+                              "BACK",
+                              style: TextStyle(color: Colors.black),
+                            ),
                           ),
-                          child: const Text("NEXT"),
-                        ),
-                      ],
-                    ),
-                  )
+                          const Spacer(),
+                          ElevatedButton(
+                            onPressed: () {
+                              if (checkSelections()) {
+                              } else {
+                                ShowToast.show(
+                                    context, 'Please choose a translation');
+                              }
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.black,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 100, vertical: 20),
+                              textStyle: const TextStyle(fontSize: 13),
+                            ),
+                            child: const Text("START"),
+                          ),
+                        ],
+                      ),
+                    )
+                  else
+                    Padding(
+                      padding: const EdgeInsets.all(30),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              if (checkSelections()) {
+                                _pageController.nextPage(
+                                  duration: const Duration(milliseconds: 200),
+                                  curve: Curves.easeIn,
+                                );
+                              } else {
+                                if (_currentPage == 1) {
+                                  ShowToast.show(context,
+                                      'Please choose your language to select a translation');
+                                }
+                              }
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.black,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              elevation: 0,
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 20),
+                              textStyle: const TextStyle(fontSize: 13),
+                            ),
+                            child: const Text("NEXT"),
+                          ),
+                        ],
+                      ),
+                    )
                 ],
               ),
             ),
@@ -164,5 +178,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         ),
       ),
     );
+  }
+
+  bool checkSelections() {
+    if (_currentPage == 0) {
+      return true;
+    }
+    if (_currentPage == 1 && quranProvider.onboardSelectedLanguage != null) {
+      return true;
+    }
+    if (_currentPage == 2 && quranProvider.onboardSelectedTranslation != null) {
+      return true;
+    }
+    return false;
   }
 }
