@@ -50,7 +50,7 @@ class _SuraListScreenState extends State<SuraListScreen> {
         style: quranProvider.isDarkMode
             ? ColorConfig.darkModeButtonStyle
             : OutlinedButton.styleFrom(
-                side: const BorderSide(color: Colors.green),
+                side: BorderSide(color: ColorConfig.buttonColor),
               ),
         child: Text(
           HomeTexts.continueReading,

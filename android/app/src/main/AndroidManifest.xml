@@ -15,7 +15,7 @@
 
 
     <application
-        android:label="al_quran"
+        android:label="Al Quran"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
 

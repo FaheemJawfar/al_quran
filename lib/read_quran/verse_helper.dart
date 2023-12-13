@@ -1,3 +1,4 @@
+import 'package:al_quran/translation/translation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -100,7 +101,7 @@ class VerseHelper {
       suraFullText.write(
           '\n${ReadQuranTexts.totalVerseCount}: ${suraDetails.totalVerses}');
       suraFullText.write(
-          '\n${ReadQuranTexts.translatedBy}: ${quranProvider.translations[quranProvider.selectedTranslation]}');
+          '\n${ReadQuranTexts.translatedBy}: ${Translation.findTranslationByFileName(quranProvider.selectedTranslation).nameInLanguage}');
       suraFullText.write(
           '\n\n(${ReadQuranTexts.getTamilQuran}: ${AppConfig.appShortUrl} )');
 

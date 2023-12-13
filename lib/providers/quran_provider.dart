@@ -31,10 +31,6 @@ class QuranProvider extends ChangeNotifier {
 
   String _selectedTranslation = AppConfig.defaultTranslation;
 
-  Map<String, String> translations = {
-    'en.sahih': 'Saheeh International',
-  };
-
   List<String> languageFontsList = const [
     'MUktaMalar',
     'HindMadurai',
@@ -70,7 +66,7 @@ class QuranProvider extends ChangeNotifier {
     AppPreferences.setBool('isTranslationRtl', value);
   }
 
-  String get selectedTranslationName => translations[selectedTranslation] ?? '';
+ // String get selectedTranslationName => translations[selectedTranslation] ?? '';
 
   List<QuranSura> _allSurasTamil = [];
 

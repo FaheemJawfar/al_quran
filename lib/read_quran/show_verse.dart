@@ -71,7 +71,7 @@ class _ShowVerseState extends State<ShowVerse> {
 
   Widget getPopupMenuItem(IconData icon, String title) {
     return ListTile(
-      iconColor: quranProvider.isDarkMode ? null : Colors.green.shade700,
+      iconColor: quranProvider.isDarkMode ? null : ColorConfig.buttonColor,
       contentPadding: EdgeInsets.zero,
       leading: Icon(icon),
       title: Text(title),
@@ -91,7 +91,7 @@ class _ShowVerseState extends State<ShowVerse> {
           ),
         ),
         PopupMenuButton<String>(
-          color: quranProvider.isDarkMode ? null : Colors.green.shade100,
+          color: quranProvider.isDarkMode ? null : ColorConfig.popupColor,
           onSelected: (String value) {
             switch (value) {
               case 'shareVerse':

@@ -230,7 +230,7 @@ class _QuranAudioPlayerScreenState extends State<QuranAudioPlayerScreen> {
                 tileColor: selectedSuraIndex == index
                     ? quranProvider.isDarkMode
                         ? Colors.black45
-                        : Colors.green[300]
+                        : ColorConfig.buttonColor
                     : null,
               );
             },
@@ -244,7 +244,7 @@ class _QuranAudioPlayerScreenState extends State<QuranAudioPlayerScreen> {
             padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
               color:
-                  quranProvider.isDarkMode ? Colors.black45 : Colors.green[100],
+                  quranProvider.isDarkMode ? Colors.black45 : ColorConfig.popupColor,
               borderRadius: const BorderRadius.all(
                 Radius.circular(15),
               ),

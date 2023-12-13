@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../app_texts/bookmarks.dart';
 import '../read_quran/quran_aya.dart';
@@ -68,7 +69,10 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
                       .filterOneAyaTranslationFromSearch(
                           int.parse(currentBookmark.suraNumber),
                           int.parse(currentBookmark.verseNumber))
-                      .text),
+                      .text,
+                  style: GoogleFonts.notoSans(),
+                    textDirection: quranProvider.isTranslationRtl ? TextDirection.rtl: TextDirection.ltr,
+                  ),
                   trailing: IconButton(
                     icon: const Icon(Icons.delete),
                     onPressed: () {

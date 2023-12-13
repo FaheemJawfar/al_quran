@@ -24,7 +24,7 @@ class _ReadSuraPopupMenuState extends State<ReadSuraPopupMenu> {
     return Padding(
         padding: const EdgeInsets.only(right: 12.0),
         child: PopupMenuButton<String>(
-          color: quranProvider.isDarkMode ? null : Colors.green.shade100,
+          color: quranProvider.isDarkMode ? null : ColorConfig.popupColor,
           itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
             PopupMenuItem<String>(
               value: 'settings',

@@ -3,7 +3,7 @@ import '../app_config/app_config.dart';
 class HomeTexts {
     // Splash Screen
   static const String theHolyQuran = 'Al Quran';
-  static const String arabicAndTranslation = 'Arabic script and translation';
+  static const String arabicAndTranslation = 'Read Quran & translation';
 
   // Sura List Arabic Screen
   static const String verseCount = 'Total verses:';
