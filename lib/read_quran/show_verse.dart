@@ -15,6 +15,7 @@ class ShowVerse extends StatefulWidget {
   final Future<void> Function() playAudio;
   final void Function() stopAudio;
   final bool isPlaying;
+  final bool isRtl;
 
   const ShowVerse(
       {
@@ -23,6 +24,7 @@ class ShowVerse extends StatefulWidget {
       required this.playAudio,
       required this.stopAudio,
       required this.isPlaying,
+      required this.isRtl,
 
       Key? key})
       : super(key: key);
@@ -34,7 +36,7 @@ class ShowVerse extends StatefulWidget {
 class _ShowVerseState extends State<ShowVerse> {
   late final quranProvider = Provider.of<QuranProvider>(context, listen: true);
 
-  TextSpan getArabicAyaList(QuranAya quranAya) {
+  TextSpan getArabicAya(QuranAya quranAya) {
       return TextSpan(
         children: [
           TextSpan(
@@ -57,17 +59,7 @@ class _ShowVerseState extends State<ShowVerse> {
     }
 
 
-  RichText getTranslation(String text) {
-      return RichText(
-          text: TextSpan(
-        text: widget.quranAyaTranslation.text,
-        style: TextStyle(
-          fontSize: quranProvider.tamilFontSize,
-          fontFamily: quranProvider.tamilFont,
-          color: quranProvider.isDarkMode ? Colors.white : Colors.black,
-        ),
-      ));
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -202,12 +194,21 @@ class _ShowVerseState extends State<ShowVerse> {
                 alignment: Alignment.topRight,
                 child: RichText(
                   textAlign: TextAlign.right,
-                  text: getArabicAyaList(widget.quranAyaTranslation),
+                  text: getArabicAya(widget.quranAyaArabic),
                 ),
               ),
               const SizedBox(height: 8),
-              getTranslation(
-                  widget.quranAyaTranslation.text),
+              Align(
+                alignment: widget.isRtl ? Alignment.topRight: Alignment.topLeft,
+                child: Text(
+                  widget.quranAyaTranslation.text,
+                  style: TextStyle(
+                    fontSize: quranProvider.tamilFontSize,
+                   // fontFamily: quranProvider.translationFont,
+                  ),
+                  textDirection: widget.isRtl ? TextDirection.rtl: TextDirection.ltr,
+                ),
+              ),
             ],
           ),
         ),

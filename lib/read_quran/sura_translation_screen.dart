@@ -101,6 +101,8 @@ class _SuraTranslationScreenState extends State<SuraTranslationScreen> {
                           && currentPlayingSuraIndex == quranProvider.selectedSuraTranslation[index].suraIndex
                           && currentPlayingAyaIndex == index,
 
+                      isRtl: quranProvider.isTranslationRtl,
+
                     ),
                   );
                 },

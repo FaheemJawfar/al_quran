@@ -1,10 +1,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../onboarding/download_progress.dart';
+import '../translation/translation.dart';
 import '/app_texts/settings_texts.dart';
 import '../app_config/color_config.dart';
 import '../providers/quran_provider.dart';
 import '../quran_audio/reciter_selector_popup.dart';
+import 'asset_downloader.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -41,33 +44,45 @@ class _SettingsScreenState extends State<SettingsScreen> {
             _buildDivider(),
             _buildListTile(
               leadingIcon: Icons.language,
-              title: SettingsTexts.languageTranslation,
-              subtitle: quranProvider.selectedTranslationName,
+              title: 'Translation',
+              subtitle: Translation.getTranslationDetails(
+                  Translation.findTranslationByFileName(
+                      quranProvider.selectedTranslation)),
               onTap: () => _showPopup(
                 child: ShowTranslationSelector(
-                  translations: quranProvider.translations,
-                  selectedTranslation: quranProvider.selectedTranslation,
-                  onSelected: (value) =>
-                      quranProvider.selectedTranslation = value,
-                ),
+                    translations: Translation.allTranslations,
+                    selectedTranslation: quranProvider.selectedTranslation,
+                    onSelected: (value) async {
+                      Translation selectedTranslation =
+                      Translation.findTranslationByFileName(value);
+                      bool fileExists = await AssetsHandler.doesAssetExist(
+                          selectedTranslation.fileName);
+
+                      if (fileExists) {
+                        quranProvider.selectedTranslation = value;
+                      } else {
+                        if (!mounted) return;
+                        showDownloadProgress(context, value);
+                      }
+                    }),
               ),
             ),
-            _buildDivider(),
-            _buildImageIconListTile(
-              leadingIcon: const ImageIcon(
-                  AssetImage(SettingsTexts.translationIconPath)),
-              title: SettingsTexts.translationFont,
-              subtitle: SettingsTexts.bismillahTranslation,
-              selectedFont: quranProvider.tamilFont,
-              onTap: () => _showPopup(
-                child: ShowFontSelector(
-                  selectedFont: quranProvider.tamilFont,
-                  translationFonts: quranProvider.languageFontsList,
-                  label: SettingsTexts.bismillahTranslation,
-                  onSelected: (value) => quranProvider.tamilFont = value,
-                ),
-              ),
-            ),
+            // _buildDivider(),
+            // _buildImageIconListTile(
+            //   leadingIcon: const ImageIcon(
+            //       AssetImage(SettingsTexts.translationIconPath)),
+            //   title: SettingsTexts.translationFont,
+            //   subtitle: SettingsTexts.bismillahTranslation,
+            //   selectedFont: quranProvider.tamilFont,
+            //   onTap: () => _showPopup(
+            //     child: ShowFontSelector(
+            //       selectedFont: quranProvider.tamilFont,
+            //       translationFonts: quranProvider.languageFontsList,
+            //       label: SettingsTexts.bismillahTranslation,
+            //       onSelected: (value) => quranProvider.tamilFont = value,
+            //     ),
+            //   ),
+            // ),
             _buildDivider(),
             _buildImageIconListTile(
               leadingIcon:
@@ -232,15 +247,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
 }
 
 class ShowTranslationSelector extends StatefulWidget {
-  final Map<String, String> translations;
+  final List<Translation> translations;
   final String selectedTranslation;
   final ValueChanged<String> onSelected;
 
   const ShowTranslationSelector(
       {required this.translations,
-      required this.selectedTranslation,
-      required this.onSelected,
-      super.key});
+        required this.selectedTranslation,
+        required this.onSelected,
+        super.key});
 
   @override
   State<ShowTranslationSelector> createState() =>
@@ -249,20 +264,20 @@ class ShowTranslationSelector extends StatefulWidget {
 
 class _ShowTranslationSelectorState extends State<ShowTranslationSelector> {
   late String selectedTranslation = widget.selectedTranslation;
-  late final quranProvider = Provider.of<QuranProvider>(context, listen: true);
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text(SettingsTexts.selectTranslation),
+      title: const Text('Select a translation'),
       content: SizedBox(
         width: double.maxFinite,
         child: ListView(
           shrinkWrap: true,
-          children: widget.translations.keys.map((String key) {
+          children: widget.translations.map((Translation translation) {
             return RadioListTile(
-              title: Text(widget.translations[key]!),
-              value: key,
+              title: Text(
+                  '${translation.language} - ${translation.nameInLanguage}'),
+              value: translation.fileName,
               groupValue: selectedTranslation,
               onChanged: (value) {
                 setState(() {
@@ -275,20 +290,16 @@ class _ShowTranslationSelectorState extends State<ShowTranslationSelector> {
       ),
       actions: <Widget>[
         TextButton(
-          style:
-              quranProvider.isDarkMode ? ColorConfig.darkModeButtonStyle : null,
-          child: const Text(SettingsTexts.popUpCancel),
+          child: const Text('Cancel'),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
         ElevatedButton(
-          style:
-              quranProvider.isDarkMode ? ColorConfig.darkModeButtonStyle : null,
-          child: const Text(SettingsTexts.popUpSelect),
+          child: const Text('Select'),
           onPressed: () {
-            widget.onSelected(selectedTranslation);
             Navigator.of(context).pop();
+            widget.onSelected(selectedTranslation);
           },
         ),
       ],

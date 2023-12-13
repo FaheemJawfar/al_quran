@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../translation/translation.dart';
 import '/app_config/app_config.dart';
 import '../app_config/color_config.dart';
 import '../bookmarks/bookmark.dart';
@@ -50,6 +51,8 @@ class QuranProvider extends ChangeNotifier {
     'UthmanicScript'
   ];
 
+
+
   String get selectedTranslation =>
       AppPreferences.getString('selectedTranslation') ?? _selectedTranslation;
 
@@ -57,7 +60,14 @@ class QuranProvider extends ChangeNotifier {
     AppPreferences.setString('selectedTranslation', value);
     _selectedTranslation = value;
     loadTranslation();
+    isTranslationRtl = Translation.findTranslationByFileName(selectedTranslation).isRtl;
     notifyListeners();
+  }
+
+  bool get isTranslationRtl => AppPreferences.getBool('isTranslationRtl') ?? false;
+
+  set isTranslationRtl(bool value) {
+    AppPreferences.setBool('isTranslationRtl', value);
   }
 
   String get selectedTranslationName => translations[selectedTranslation] ?? '';
