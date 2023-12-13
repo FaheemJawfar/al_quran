@@ -1,10 +1,11 @@
 import 'package:al_quran/common_widgets/show_toast.dart';
 import 'package:al_quran/onboarding/choose_language.dart';
 import 'package:al_quran/onboarding/choose_translation.dart';
+import 'package:al_quran/onboarding/download_screen.dart';
 import 'package:al_quran/onboarding/welcome_onboarding.dart';
+import 'package:al_quran/translation/translation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../providers/quran_provider.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -117,6 +118,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           ElevatedButton(
                             onPressed: () {
                               if (checkSelections()) {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => DownloadScreen(selectedTranslation: Translation.findTranslationByFileName(quranProvider.onboardSelectedTranslation!))),
+                                );
                               } else {
                                 ShowToast.show(
                                     context, 'Please choose a translation');

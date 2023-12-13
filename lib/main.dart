@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           title: AppConfig.appName,
           debugShowCheckedModeBanner: false,
           theme: context.watch<QuranProvider>().quranTheme,
-          home: OnboardingScreen(),
+          home: AppPreferences.getString('selectedTranslation') == null ? const OnboardingScreen():const SplashScreen(),
         );
       }),
     );

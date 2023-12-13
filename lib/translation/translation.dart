@@ -19,7 +19,7 @@ class Translation {
         isRtl: json["isRtl"],
         nameInLanguage: json["nameInLanguage"],
         translator: json["translator"],
-        fileName: json["file_name"],
+        fileName: json["fileName"],
       );
 
   Map<String, dynamic> toJson() =>
@@ -28,7 +28,7 @@ class Translation {
         "isRtl": isRtl,
         "nameInLanguage": nameInLanguage,
         "translator": translator,
-        "file_name": fileName,
+        "fileName": fileName,
       };
 
 
@@ -84,805 +84,805 @@ class Translation {
       "isRtl": false,
       "nameInLanguage": "Efendi Nahi",
       "translator": "Hasan Efendi Nahi",
-      "file_name": "sq.nahi"
+      "fileName": "sq.nahi"
     },
     {
       "language": "Albanian",
       "isRtl": false,
       "nameInLanguage": "Feti Mehdiu",
       "translator": "Feti Mehdiu",
-      "file_name": "sq.mehdiu"
+      "fileName": "sq.mehdiu"
     },
     {
       "language": "Albanian",
       "isRtl": false,
       "nameInLanguage": "Sherif Ahmeti",
       "translator": "Sherif Ahmeti",
-      "file_name": "sq.ahmeti"
+      "fileName": "sq.ahmeti"
     },
     {
       "language": "Amazigh",
       "isRtl": false,
       "nameInLanguage": "At Mensur",
       "translator": "Ramdane At Mansour",
-      "file_name": "ber.mensur"
+      "fileName": "ber.mensur"
     },
     {
       "language": "Arabic",
       "isRtl": true,
       "nameInLanguage": "تفسير الجلالين",
       "translator": "Jalal ad-Din al-Mahalli and Jalal ad-Din as-Suyuti",
-      "file_name": "ar.jalalayn"
+      "fileName": "ar.jalalayn"
     },
     {
       "language": "Arabic",
       "isRtl": true,
       "nameInLanguage": "تفسير المیسر",
       "translator": "King Fahad Quran Complex",
-      "file_name": "ar.muyassar"
+      "fileName": "ar.muyassar"
     },
     {
       "language": "Amharic",
       "isRtl": false,
       "nameInLanguage": "ሳዲቅ & ሳኒ ሐቢብ",
       "translator": "Muhammed Sadiq and Muhammed Sani Habib",
-      "file_name": "am.sadiq"
+      "fileName": "am.sadiq"
     },
     {
       "language": "Azerbaijani",
       "isRtl": false,
       "nameInLanguage": "Məmmədəliyev & Bünyadov",
       "translator": "Vasim Mammadaliyev and Ziya Bunyadov",
-      "file_name": "az.mammadaliyev"
+      "fileName": "az.mammadaliyev"
     },
     {
       "language": "Azerbaijani",
       "isRtl": false,
       "nameInLanguage": "Musayev",
       "translator": "Alikhan Musayev",
-      "file_name": "az.musayev"
+      "fileName": "az.musayev"
     },
     {
       "language": "Bengali",
       "isRtl": false,
       "nameInLanguage": "জহুরুল হক",
       "translator": "Zohurul Hoque",
-      "file_name": "bn.hoque"
+      "fileName": "bn.hoque"
     },
     {
       "language": "Bengali",
       "isRtl": false,
       "nameInLanguage": "মুহিউদ্দীন খান",
       "translator": "Muhiuddin Khan",
-      "file_name": "bn.bengali"
+      "fileName": "bn.bengali"
     },
     {
       "language": "Bosnian",
       "isRtl": false,
       "nameInLanguage": "Korkut",
       "translator": "Besim Korkut",
-      "file_name": "bs.korkut"
+      "fileName": "bs.korkut"
     },
     {
       "language": "Bosnian",
       "isRtl": false,
       "nameInLanguage": "Mlivo",
       "translator": "Mustafa Mlivo",
-      "file_name": "bs.mlivo"
+      "fileName": "bs.mlivo"
     },
     {
       "language": "Bulgarian",
       "isRtl": false,
       "nameInLanguage": "Теофанов",
       "translator": "Tzvetan Theophanov",
-      "file_name": "bg.theophanov"
+      "fileName": "bg.theophanov"
     },
     {
       "language": "Chinese",
       "isRtl": false,
       "nameInLanguage": "Ma Jian",
       "translator": "Ma Jian",
-      "file_name": "zh.jian"
+      "fileName": "zh.jian"
     },
     {
       "language": "Chinese",
       "isRtl": false,
       "nameInLanguage": "Ma Jian (Traditional)",
       "translator": "Ma Jian",
-      "file_name": "zh.majian"
+      "fileName": "zh.majian"
     },
     {
       "language": "Czech",
       "isRtl": false,
       "nameInLanguage": "Hrbek",
       "translator": "Preklad I. Hrbek",
-      "file_name": "cs.hrbek"
+      "fileName": "cs.hrbek"
     },
     {
       "language": "Czech",
       "isRtl": false,
       "nameInLanguage": "Nykl",
       "translator": "A. R. Nykl",
-      "file_name": "cs.nykl"
+      "fileName": "cs.nykl"
     },
     {
       "language": "Divehi",
       "isRtl": true,
       "nameInLanguage": "ދިވެހި",
       "translator": "Office of the President of Maldives",
-      "file_name": "dv.divehi"
+      "fileName": "dv.divehi"
     },
     {
       "language": "Dutch",
       "isRtl": false,
       "nameInLanguage": "Keyzer",
       "translator": "Salomo Keyzer",
-      "file_name": "nl.keyzer"
+      "fileName": "nl.keyzer"
     },
     {
       "language": "Dutch",
       "isRtl": false,
       "nameInLanguage": "Leemhuis",
       "translator": "Fred Leemhuis",
-      "file_name": "nl.leemhuis"
+      "fileName": "nl.leemhuis"
     },
     {
       "language": "Dutch",
       "isRtl": false,
       "nameInLanguage": "Siregar",
       "translator": "Sofian S. Siregar",
-      "file_name": "nl.siregar"
+      "fileName": "nl.siregar"
     },
     {
       "language": "English",
       "isRtl": false,
       "nameInLanguage": "Ahmed Ali",
       "translator": "Ahmed Ali",
-      "file_name": "en.ahmedali"
+      "fileName": "en.ahmedali"
     },
     {
       "language": "English",
       "isRtl": false,
       "nameInLanguage": "Ahmed Raza Khan",
       "translator": "Ahmed Raza Khan",
-      "file_name": "en.ahmedraza"
+      "fileName": "en.ahmedraza"
     },
     {
       "language": "English",
       "isRtl": false,
       "nameInLanguage": "Arberry",
       "translator": "A. J. Arberry",
-      "file_name": "en.arberry"
+      "fileName": "en.arberry"
     },
     {
       "language": "English",
       "isRtl": false,
       "nameInLanguage": "Daryabadi",
       "translator": "Abdul Majid Daryabadi",
-      "file_name": "en.daryabadi"
+      "fileName": "en.daryabadi"
     },
     {
       "language": "English",
       "isRtl": false,
       "nameInLanguage": "Hilali & Khan",
       "translator": "Muhammad Taqi-ud-Din al-Hilali and Muhammad Muhsin Khan",
-      "file_name": "en.hilali"
+      "fileName": "en.hilali"
     },
     {
       "language": "English",
       "isRtl": false,
       "nameInLanguage": "Itani",
       "translator": "Talal Itani",
-      "file_name": "en.itani"
+      "fileName": "en.itani"
     },
     {
       "language": "English",
       "isRtl": false,
       "nameInLanguage": "Maududi",
       "translator": "Abul Ala Maududi",
-      "file_name": "en.maududi"
+      "fileName": "en.maududi"
     },
     {
       "language": "English",
       "isRtl": false,
       "nameInLanguage": "Mubarakpuri",
       "translator": "Safi-ur-Rahman al-Mubarakpuri",
-      "file_name": "en.mubarakpuri"
+      "fileName": "en.mubarakpuri"
     },
     {
       "language": "English",
       "isRtl": false,
       "nameInLanguage": "Pickthall",
       "translator": "Mohammed Marmaduke William Pickthall",
-      "file_name": "en.pickthall"
+      "fileName": "en.pickthall"
     },
     {
       "language": "English",
       "isRtl": false,
       "nameInLanguage": "Qarai",
       "translator": "Ali Quli Qarai",
-      "file_name": "en.qarai"
+      "fileName": "en.qarai"
     },
     {
       "language": "English",
       "isRtl": false,
       "nameInLanguage": "Qaribullah & Darwish",
       "translator": "Hasan al-Fatih Qaribullah and Ahmad Darwish",
-      "file_name": "en.qaribullah"
+      "fileName": "en.qaribullah"
     },
     {
       "language": "English",
       "isRtl": false,
       "nameInLanguage": "Saheeh International",
       "translator": "Saheeh International",
-      "file_name": "en.sahih"
+      "fileName": "en.sahih"
     },
     {
       "language": "English",
       "isRtl": false,
       "nameInLanguage": "Sarwar",
       "translator": "Muhammad Sarwar",
-      "file_name": "en.sarwar"
+      "fileName": "en.sarwar"
     },
     {
       "language": "English",
       "isRtl": false,
       "nameInLanguage": "Shakir",
       "translator": "Mohammad Habib Shakir",
-      "file_name": "en.shakir"
+      "fileName": "en.shakir"
     },
     {
       "language": "English",
       "isRtl": false,
       "nameInLanguage": "Transliteration",
       "translator": "English Transliteration",
-      "file_name": "en.transliteration"
+      "fileName": "en.transliteration"
     },
     {
       "language": "English",
       "isRtl": false,
       "nameInLanguage": "Wahiduddin Khan",
       "translator": "Wahiduddin Khan",
-      "file_name": "en.wahiduddin"
+      "fileName": "en.wahiduddin"
     },
     {
       "language": "English",
       "isRtl": false,
       "nameInLanguage": "Yusuf Ali",
       "translator": "Abdullah Yusuf Ali",
-      "file_name": "en.yusufali"
+      "fileName": "en.yusufali"
     },
     {
       "language": "French",
       "isRtl": false,
       "nameInLanguage": "Hamidullah",
       "translator": "Muhammad Hamidullah",
-      "file_name": "fr.hamidullah"
+      "fileName": "fr.hamidullah"
     },
     {
       "language": "German",
       "isRtl": false,
       "nameInLanguage": "Abu Rida",
       "translator": "Abu Rida Muhammad ibn Ahmad ibn Rassoul",
-      "file_name": "de.aburida"
+      "fileName": "de.aburida"
     },
     {
       "language": "German",
       "isRtl": false,
       "nameInLanguage": "Bubenheim & Elyas",
       "translator": "A. S. F. Bubenheim and N. Elyas",
-      "file_name": "de.bubenheim"
+      "fileName": "de.bubenheim"
     },
     {
       "language": "German",
       "isRtl": false,
       "nameInLanguage": "Khoury",
       "translator": "Adel Theodor Khoury",
-      "file_name": "de.khoury"
+      "fileName": "de.khoury"
     },
     {
       "language": "German",
       "isRtl": false,
       "nameInLanguage": "Zaidan",
       "translator": "Amir Zaidan",
-      "file_name": "de.zaidan"
+      "fileName": "de.zaidan"
     },
     {
       "language": "Hausa",
       "isRtl": false,
       "nameInLanguage": "Gumi",
       "translator": "Abubakar Mahmoud Gumi",
-      "file_name": "ha.gumi"
+      "fileName": "ha.gumi"
     },
     {
       "language": "Hindi",
       "isRtl": false,
       "nameInLanguage": "फ़ारूक़ ख़ान & अहमद",
       "translator": "Muhammad Farooq Khan and Muhammad Ahmed",
-      "file_name": "hi.farooq"
+      "fileName": "hi.farooq"
     },
     {
       "language": "Hindi",
       "isRtl": false,
       "nameInLanguage": "फ़ारूक़ ख़ान & नदवी",
       "translator": "Suhel Farooq Khan and Saifur Rahman Nadwi",
-      "file_name": "hi.hindi"
+      "fileName": "hi.hindi"
     },
     {
       "language": "Indonesian",
       "isRtl": false,
       "nameInLanguage": "Bahasa Indonesia",
       "translator": "Indonesian Ministry of Religious Affairs",
-      "file_name": "id.indonesian"
+      "fileName": "id.indonesian"
     },
     {
       "language": "Indonesian",
       "isRtl": false,
       "nameInLanguage": "Quraish Shihab",
       "translator": "Muhammad Quraish Shihab et al.",
-      "file_name": "id.muntakhab"
+      "fileName": "id.muntakhab"
     },
     {
       "language": "Indonesian",
       "isRtl": false,
       "nameInLanguage": "Tafsir Jalalayn",
       "translator": "Jalal ad-Din al-Mahalli and Jalal ad-Din as-Suyuti",
-      "file_name": "id.jalalayn"
+      "fileName": "id.jalalayn"
     },
     {
       "language": "Italian",
       "isRtl": false,
       "nameInLanguage": "Piccardo",
       "translator": "Hamza Roberto Piccardo",
-      "file_name": "it.piccardo"
+      "fileName": "it.piccardo"
     },
     {
       "language": "Japanese",
       "isRtl": false,
       "nameInLanguage": "Japanese",
       "translator": "Unknown",
-      "file_name": "ja.japanese"
+      "fileName": "ja.japanese"
     },
     {
       "language": "Korean",
       "isRtl": false,
       "nameInLanguage": "Korean",
       "translator": "Unknown",
-      "file_name": "ko.korean"
+      "fileName": "ko.korean"
     },
     {
       "language": "Kurdish",
       "isRtl": true,
       "nameInLanguage": "ته‌فسیری ئاسان",
       "translator": "Burhan Muhammad-Amin",
-      "file_name": "ku.asan"
+      "fileName": "ku.asan"
     },
     {
       "language": "Malay",
       "isRtl": false,
       "nameInLanguage": "Basmeih",
       "translator": "Abdullah Muhammad Basmeih",
-      "file_name": "ms.basmeih"
+      "fileName": "ms.basmeih"
     },
     {
       "language": "Malayalam",
       "isRtl": false,
       "nameInLanguage": "അബ്ദുല്‍ ഹമീദ് & പറപ്പൂര്‍",
       "translator": "Cheriyamundam Abdul Hameed and Kunhi Mohammed Parappoor",
-      "file_name": "ml.abdulhameed"
+      "fileName": "ml.abdulhameed"
     },
     {
       "language": "Malayalam",
       "isRtl": false,
       "nameInLanguage": "കാരകുന്ന് & എളയാവൂര്",
       "translator": "Muhammad Karakunnu and Vanidas Elayavoor",
-      "file_name": "ml.karakunnu"
+      "fileName": "ml.karakunnu"
     },
     {
       "language": "Norwegian",
       "isRtl": false,
       "nameInLanguage": "Einar Berg",
       "translator": "Einar Berg",
-      "file_name": "no.berg"
+      "fileName": "no.berg"
     },
     {
       "language": "Pashto",
       "isRtl": true,
       "nameInLanguage": "عبدالولي",
       "translator": "Abdulwali Khan",
-      "file_name": "ps.abdulwali"
+      "fileName": "ps.abdulwali"
     },
     {
       "language": "Persian",
       "isRtl": true,
       "nameInLanguage": "انصاریان",
       "translator": "Hussain Ansarian",
-      "file_name": "fa.ansarian"
+      "fileName": "fa.ansarian"
     },
     {
       "language": "Persian",
       "isRtl": true,
       "nameInLanguage": "آیتی",
       "translator": "AbdolMohammad Ayati",
-      "file_name": "fa.ayati"
+      "fileName": "fa.ayati"
     },
     {
       "language": "Persian",
       "isRtl": true,
       "nameInLanguage": "بهرام‌پور",
       "translator": "Abolfazl Bahrampour",
-      "file_name": "fa.bahrampour"
+      "fileName": "fa.bahrampour"
     },
     {
       "language": "Persian",
       "isRtl": true,
       "nameInLanguage": "قرائتی",
       "translator": "Mohsen Gharaati",
-      "file_name": "fa.gharaati"
+      "fileName": "fa.gharaati"
     },
     {
       "language": "Persian",
       "isRtl": true,
       "nameInLanguage": "الهی قمشه‌ای",
       "translator": "Mahdi Elahi Ghomshei",
-      "file_name": "fa.ghomshei"
+      "fileName": "fa.ghomshei"
     },
     {
       "language": "Persian",
       "isRtl": true,
       "nameInLanguage": "خرمدل",
       "translator": "Mostafa Khorramdel",
-      "file_name": "fa.khorramdel"
+      "fileName": "fa.khorramdel"
     },
     {
       "language": "Persian",
       "isRtl": true,
       "nameInLanguage": "خرمشاهی",
       "translator": "Baha'oddin Khorramshahi",
-      "file_name": "fa.khorramshahi"
+      "fileName": "fa.khorramshahi"
     },
     {
       "language": "Persian",
       "isRtl": true,
       "nameInLanguage": "صادقی تهرانی",
       "translator": "Mohammad Sadeqi Tehrani",
-      "file_name": "fa.sadeqi"
+      "fileName": "fa.sadeqi"
     },
     {
       "language": "Persian",
       "isRtl": true,
       "nameInLanguage": "صفوی",
       "translator": "Sayyed Mohammad Reza Safavi",
-      "file_name": "fa.safavi"
+      "fileName": "fa.safavi"
     },
     {
       "language": "Persian",
       "isRtl": true,
       "nameInLanguage": "فولادوند",
       "translator": "Mohammad Mahdi Fooladvand",
-      "file_name": "fa.fooladvand"
+      "fileName": "fa.fooladvand"
     },
     {
       "language": "Persian",
       "isRtl": true,
       "nameInLanguage": "مجتبوی",
       "translator": "Sayyed Jalaloddin Mojtabavi",
-      "file_name": "fa.mojtabavi"
+      "fileName": "fa.mojtabavi"
     },
     {
       "language": "Persian",
       "isRtl": true,
       "nameInLanguage": "معزی",
       "translator": "Mohammad Kazem Moezzi",
-      "file_name": "fa.moezzi"
+      "fileName": "fa.moezzi"
     },
     {
       "language": "Persian",
       "isRtl": true,
       "nameInLanguage": "مکارم شیرازی",
       "translator": "Naser Makarem Shirazi",
-      "file_name": "fa.makarem"
+      "fileName": "fa.makarem"
     },
     {
       "language": "Polish",
       "isRtl": false,
       "nameInLanguage": "Bielawskiego",
       "translator": "Józefa Bielawskiego",
-      "file_name": "pl.bielawskiego"
+      "fileName": "pl.bielawskiego"
     },
     {
       "language": "Portuguese",
       "isRtl": false,
       "nameInLanguage": "El-Hayek",
       "translator": "Samir El-Hayek",
-      "file_name": "pt.elhayek"
+      "fileName": "pt.elhayek"
     },
     {
       "language": "Romanian",
       "isRtl": false,
       "nameInLanguage": "Grigore",
       "translator": "George Grigore",
-      "file_name": "ro.grigore"
+      "fileName": "ro.grigore"
     },
     {
       "language": "Russian",
       "isRtl": false,
       "nameInLanguage": "Абу Адель",
       "translator": "Abu Adel",
-      "file_name": "ru.abuadel"
+      "fileName": "ru.abuadel"
     },
     {
       "language": "Russian",
       "isRtl": false,
       "nameInLanguage": "Аль-Мунтахаб",
       "translator": "Ministry of Awqaf, Egypt",
-      "file_name": "ru.muntahab"
+      "fileName": "ru.muntahab"
     },
     {
       "language": "Russian",
       "isRtl": false,
       "nameInLanguage": "Калям Шариф",
       "translator": "Muslim Religious Board of the Republiс of Tatarstan",
-      "file_name": "ru.kalam"
+      "fileName": "ru.kalam"
     },
     {
       "language": "Russian",
       "isRtl": false,
       "nameInLanguage": "Крачковский",
       "translator": "Ignaty Yulianovich Krachkovsky",
-      "file_name": "ru.krachkovsky"
+      "fileName": "ru.krachkovsky"
     },
     {
       "language": "Russian",
       "isRtl": false,
       "nameInLanguage": "Кулиев",
       "translator": "Elmir Kuliev",
-      "file_name": "ru.kuliev"
+      "fileName": "ru.kuliev"
     },
     {
       "language": "Russian",
       "isRtl": false,
       "nameInLanguage": "Кулиев + ас-Саади",
       "translator": "Elmir Kuliev (with Abd ar-Rahman as-Saadi's commentaries)",
-      "file_name": "ru.kuliev-alsaadi"
+      "fileName": "ru.kuliev-alsaadi"
     },
     {
       "language": "Russian",
       "isRtl": false,
       "nameInLanguage": "Османов",
       "translator": "Magomed-Nuri Osmanovich Osmanov",
-      "file_name": "ru.osmanov"
+      "fileName": "ru.osmanov"
     },
     {
       "language": "Russian",
       "isRtl": false,
       "nameInLanguage": "Порохова",
       "translator": "V. Porokhova",
-      "file_name": "ru.porokhova"
+      "fileName": "ru.porokhova"
     },
     {
       "language": "Russian",
       "isRtl": false,
       "nameInLanguage": "Саблуков",
       "translator": "Gordy Semyonovich Sablukov",
-      "file_name": "ru.sablukov"
+      "fileName": "ru.sablukov"
     },
     {
       "language": "Sindhi",
       "isRtl": true,
       "nameInLanguage": "امروٽي",
       "translator": "Taj Mehmood Amroti",
-      "file_name": "sd.amroti"
+      "fileName": "sd.amroti"
     },
     {
       "language": "Somali",
       "isRtl": false,
       "nameInLanguage": "Abduh",
       "translator": "Mahmud Muhammad Abduh",
-      "file_name": "so.abduh"
+      "fileName": "so.abduh"
     },
     {
       "language": "Spanish",
       "isRtl": false,
       "nameInLanguage": "Bornez",
       "translator": "Raúl González Bórnez",
-      "file_name": "es.bornez"
+      "fileName": "es.bornez"
     },
     {
       "language": "Spanish",
       "isRtl": false,
       "nameInLanguage": "Cortes",
       "translator": "Julio Cortes",
-      "file_name": "es.cortes"
+      "fileName": "es.cortes"
     },
     {
       "language": "Spanish",
       "isRtl": false,
       "nameInLanguage": "Garcia",
       "translator": "Muhammad Isa García",
-      "file_name": "es.garcia"
+      "fileName": "es.garcia"
     },
     {
       "language": "Swahili",
       "isRtl": false,
       "nameInLanguage": "Al-Barwani",
       "translator": "Ali Muhsin Al-Barwani",
-      "file_name": "sw.barwani"
+      "fileName": "sw.barwani"
     },
     {
       "language": "Swedish",
       "isRtl": false,
       "nameInLanguage": "Bernström",
       "translator": "Knut Bernström",
-      "file_name": "sv.bernstrom"
+      "fileName": "sv.bernstrom"
     },
     {
       "language": "Tajik",
       "isRtl": false,
       "nameInLanguage": "Оятӣ",
       "translator": "AbdolMohammad Ayati",
-      "file_name": "tg.ayati"
+      "fileName": "tg.ayati"
     },
     {
       "language": "Tamil",
       "isRtl": false,
       "nameInLanguage": "ஜான் டிரஸ்ட்",
       "translator": "Jan Turst Foundation",
-      "file_name": "ta.tamil"
+      "fileName": "ta.tamil"
     },
     {
       "language": "Tatar",
       "isRtl": false,
       "nameInLanguage": "Yakub Ibn Nugman",
       "translator": "Yakub Ibn Nugman",
-      "file_name": "tt.nugman"
+      "fileName": "tt.nugman"
     },
     {
       "language": "Thai",
       "isRtl": false,
       "nameInLanguage": "ภาษาไทย",
       "translator": "King Fahad Quran Complex",
-      "file_name": "th.thai"
+      "fileName": "th.thai"
     },
     {
       "language": "Turkish",
       "isRtl": false,
       "nameInLanguage": "Abdulbakî Gölpınarlı",
       "translator": "Abdulbaki Golpinarli",
-      "file_name": "tr.golpinarli"
+      "fileName": "tr.golpinarli"
     },
     {
       "language": "Turkish",
       "isRtl": false,
       "nameInLanguage": "Alİ Bulaç",
       "translator": "Alİ Bulaç",
-      "file_name": "tr.bulac"
+      "fileName": "tr.bulac"
     },
     {
       "language": "Turkish",
       "isRtl": false,
       "nameInLanguage": "Çeviriyazı",
       "translator": "Muhammet Abay",
-      "file_name": "tr.transliteration"
+      "fileName": "tr.transliteration"
     },
     {
       "language": "Turkish",
       "isRtl": false,
       "nameInLanguage": "Diyanet İşleri",
       "translator": "Diyanet Isleri",
-      "file_name": "tr.diyanet"
+      "fileName": "tr.diyanet"
     },
     {
       "language": "Turkish",
       "isRtl": false,
       "nameInLanguage": "Diyanet Vakfı",
       "translator": "Diyanet Vakfi",
-      "file_name": "tr.vakfi"
+      "fileName": "tr.vakfi"
     },
     {
       "language": "Turkish",
       "isRtl": false,
       "nameInLanguage": "Edip Yüksel",
       "translator": "Edip Yüksel",
-      "file_name": "tr.yuksel"
+      "fileName": "tr.yuksel"
     },
     {
       "language": "Turkish",
       "isRtl": false,
       "nameInLanguage": "Elmalılı Hamdi Yazır",
       "translator": "Elmalili Hamdi Yazir",
-      "file_name": "tr.yazir"
+      "fileName": "tr.yazir"
     },
     {
       "language": "Turkish",
       "isRtl": false,
       "nameInLanguage": "Öztürk",
       "translator": "Yasar Nuri Ozturk",
-      "file_name": "tr.ozturk"
+      "fileName": "tr.ozturk"
     },
     {
       "language": "Turkish",
       "isRtl": false,
       "nameInLanguage": "Suat Yıldırım",
       "translator": "Suat Yildirim",
-      "file_name": "tr.yildirim"
+      "fileName": "tr.yildirim"
     },
     {
       "language": "Turkish",
       "isRtl": false,
       "nameInLanguage": "Süleyman Ateş",
       "translator": "Suleyman Ates",
-      "file_name": "tr.ates"
+      "fileName": "tr.ates"
     },
     {
       "language": "Urdu",
       "isRtl": true,
       "nameInLanguage": "ابوالاعلی مودودی",
       "translator": "Abul A'ala Maududi",
-      "file_name": "ur.maududi"
+      "fileName": "ur.maududi"
     },
     {
       "language": "Urdu",
       "isRtl": true,
       "nameInLanguage": "احمد رضا خان",
       "translator": "Ahmed Raza Khan",
-      "file_name": "ur.kanzuliman"
+      "fileName": "ur.kanzuliman"
     },
     {
       "language": "Urdu",
       "isRtl": true,
       "nameInLanguage": "احمد علی",
       "translator": "Ahmed Ali",
-      "file_name": "ur.ahmedali"
+      "fileName": "ur.ahmedali"
     },
     {
       "language": "Urdu",
       "isRtl": true,
       "nameInLanguage": "جالندہری",
       "translator": "Fateh Muhammad Jalandhry",
-      "file_name": "ur.jalandhry"
+      "fileName": "ur.jalandhry"
     },
     {
       "language": "Urdu",
       "isRtl": true,
       "nameInLanguage": "طاہر القادری",
       "translator": "Tahir ul Qadri",
-      "file_name": "ur.qadri"
+      "fileName": "ur.qadri"
     },
     {
       "language": "Urdu",
       "isRtl": true,
       "nameInLanguage": "علامہ جوادی",
       "translator": "Syed Zeeshan Haider Jawadi",
-      "file_name": "ur.jawadi"
+      "fileName": "ur.jawadi"
     },
     {
       "language": "Urdu",
       "isRtl": true,
       "nameInLanguage": "محمد جوناگڑھی",
       "translator": "Muhammad Junagarhi",
-      "file_name": "ur.junagarhi"
+      "fileName": "ur.junagarhi"
     },
     {
       "language": "Urdu",
       "isRtl": true,
       "nameInLanguage": "محمد حسین نجفی",
       "translator": "Muhammad Hussain Najafi",
-      "file_name": "ur.najafi"
+      "fileName": "ur.najafi"
     },
     {
       "language": "Uyghur",
       "isRtl": true,
       "nameInLanguage": "محمد صالح",
       "translator": "Muhammad Saleh",
-      "file_name": "ug.saleh"
+      "fileName": "ug.saleh"
     },
     {
       "language": "Uzbek",
       "isRtl": true,
       "nameInLanguage": "Мухаммад Содик",
       "translator": "Muhammad Sodik Muhammad Yusuf",
-      "file_name": "uz.sodik"
+      "fileName": "uz.sodik"
     }
 
   ];

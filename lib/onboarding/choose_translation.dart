@@ -34,7 +34,7 @@ class _ChooseTranslationScreenState extends State<ChooseTranslationScreen> {
           child: ListView.builder(
             itemCount: translationList.length,
             itemBuilder: (context, index) {
-              final translation = translationList[index]['nameInLanguage'];
+              final translation = translationList[index]['fileName'];
               return CheckboxListTile(
                 value: quranProvider.onboardSelectedTranslation == translation,
                 onChanged: (newValue) {
@@ -43,11 +43,11 @@ class _ChooseTranslationScreenState extends State<ChooseTranslationScreen> {
                                 null &&
                             newValue
                         ? translation
-                        : null; // Set selectedLanguage to the chosen language or null if unchecked
+                        : null;
                   });
                 },
                 tileColor: const Color(0xffDCF6E6),
-                title: Text(translation),
+                title: Text(Translation.findTranslationByFileName(translation).nameInLanguage),
               );
             },
           ),
