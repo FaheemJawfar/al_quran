@@ -50,6 +50,7 @@ dependencies:
   just_audio_background: ^0.0.1-beta.10
   path_provider: ^2.1.1
   dio: ^5.3.3
+  google_fonts: ^6.1.0
 
 
 dev_dependencies:
@@ -118,18 +119,6 @@ flutter:
   # example:
 
   fonts:
-    - family: Roboto
-      fonts:
-        - asset: assets/fonts/Roboto-Regular.ttf
-
-    - family: OpenSans
-      fonts:
-        - asset: assets/fonts/OpenSans-VariableFont_wdth,wght.ttf
-
-    - family: Montserrat
-      fonts:
-        - asset: assets/fonts/Montserrat-Regular.ttf
-
     - family: NotoSans
       fonts:
         - asset: assets/fonts/NotoSans-VariableFont_wdth,wght.ttf

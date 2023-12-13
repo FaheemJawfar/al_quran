@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import '../app_config/color_config.dart';
@@ -202,9 +203,8 @@ class _ShowVerseState extends State<ShowVerse> {
                 alignment: widget.isRtl ? Alignment.topRight: Alignment.topLeft,
                 child: Text(
                   widget.quranAyaTranslation.text,
-                  style: TextStyle(
+                  style: GoogleFonts.notoSans(
                     fontSize: quranProvider.tamilFontSize,
-                   // fontFamily: quranProvider.translationFont,
                   ),
                   textDirection: widget.isRtl ? TextDirection.rtl: TextDirection.ltr,
                 ),
@@ -218,7 +218,6 @@ class _ShowVerseState extends State<ShowVerse> {
 
   Widget buildBismi() {
     String bismiArabic = quranProvider.bismillahArabic.text;
-    String bismiTamil =  quranProvider.bismillahTranslation.text;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -241,12 +240,14 @@ class _ShowVerseState extends State<ShowVerse> {
                 ),
               ),
               const SizedBox(height: 8),
-              Text(
-               bismiTamil,
-                style: TextStyle(
-                  fontSize: quranProvider.tamilFontSize,
-                  fontFamily: quranProvider.tamilFont,
-                  color: quranProvider.isDarkMode ? Colors.white : Colors.black,
+              Align(
+                alignment: widget.isRtl ? Alignment.topRight: Alignment.topLeft,
+                child: Text(
+                  widget.quranAyaTranslation.text,
+                  style: GoogleFonts.notoSans(
+                    fontSize: quranProvider.tamilFontSize,
+                  ),
+                  textDirection: widget.isRtl ? TextDirection.rtl: TextDirection.ltr,
                 ),
               ),
             ],
