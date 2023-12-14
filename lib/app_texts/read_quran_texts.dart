@@ -8,7 +8,7 @@ class ReadQuranTexts {
   static const String share = 'Share';
   static const String addBookmark = 'Add Bookmark';
   static const String copyArabicAndTranslation = 'Copy Arabic + Translation';
-  static const String copyArabic = 'Copy Translation';
+  static const String copyArabic = 'Copy Arabic';
   static const String copyTranslation = 'Copy Translation';
 
   // Quran Helper
