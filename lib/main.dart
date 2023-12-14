@@ -11,6 +11,10 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await AppPreferences.initialize();
 
+  // for(var lang in Translation.allTranslations){
+  //   print(lang.language);
+  // }
+
   await JustAudioBackground.init(
     androidNotificationChannelId: 'com.faheemapps.al_quran.channel.audio',
     androidNotificationChannelName: 'Audio playback',

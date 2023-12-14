@@ -118,7 +118,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           ElevatedButton(
                             onPressed: () {
                               if (checkSelections()) {
-                                Navigator.push(
+                                Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => DownloadScreen(selectedTranslation: Translation.findTranslationByFileName(quranProvider.onboardSelectedTranslation!))),

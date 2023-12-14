@@ -264,7 +264,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                 text: TextSpan(
                                   children: textSpans,
                                   style: TextStyle(
-                                    fontSize: quranProvider.tamilFontSize,
+                                    fontSize: quranProvider.translationFontSize,
                                     fontFamily: quranProvider.tamilFont,
                                   ),
                                 ),

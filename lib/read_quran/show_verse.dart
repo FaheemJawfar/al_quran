@@ -204,7 +204,7 @@ class _ShowVerseState extends State<ShowVerse> {
                 child: Text(
                   widget.quranAyaTranslation.text,
                   style: GoogleFonts.notoSans(
-                    fontSize: quranProvider.tamilFontSize,
+                    fontSize: quranProvider.translationFontSize,
                   ),
                   textDirection: widget.isRtl ? TextDirection.rtl: TextDirection.ltr,
                 ),
@@ -245,7 +245,7 @@ class _ShowVerseState extends State<ShowVerse> {
                 child: Text(
                   widget.quranAyaTranslation.text,
                   style: GoogleFonts.notoSans(
-                    fontSize: quranProvider.tamilFontSize,
+                    fontSize: quranProvider.translationFontSize,
                   ),
                   textDirection: widget.isRtl ? TextDirection.rtl: TextDirection.ltr,
                 ),

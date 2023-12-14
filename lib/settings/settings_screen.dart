@@ -103,14 +103,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
             _buildListTile(
               leadingIcon: Icons.text_fields,
               title: SettingsTexts.translationFontSize,
-              subtitle: quranProvider.tamilFontSize.floor().toString(),
+              subtitle: quranProvider.translationFontSize.floor().toString(),
               onTap: () => _showPopup(
                   child: FontSizeSelector(
-                fontSize: quranProvider.tamilFontSize,
+                fontSize: quranProvider.translationFontSize,
                 text: SettingsTexts.bismillahTranslation,
                 fontFamily: quranProvider.tamilFont,
                 onChanged: (value) {
-                  quranProvider.tamilFontSize = value;
+                  quranProvider.translationFontSize = value;
                 },
               )),
             ),

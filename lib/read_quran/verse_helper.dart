@@ -68,7 +68,7 @@ class VerseHelper {
       StringBuffer suraFullText = StringBuffer();
 
       String header =
-          '${suraDetails.nameInEnglish} - (${suraDetails.meaningOfName}';
+          '${suraDetails.nameInEnglish} - (${suraDetails.meaningOfName})';
 
       suraFullText.write('$header\n${'-' * header.length}\n');
 

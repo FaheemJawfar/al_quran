@@ -26,7 +26,7 @@ class _DownloadScreenState extends State<DownloadScreen> {
             children: <Widget>[
               DownloadProgressPopup(fileName: widget.selectedTranslation.fileName, onComplete: () {
                 AppPreferences.setString('selectedTranslation',  widget.selectedTranslation.fileName);
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                       builder: (context) => const SplashScreen()),

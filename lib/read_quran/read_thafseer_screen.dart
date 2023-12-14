@@ -80,7 +80,7 @@ class _ReadThafseerScreenState extends State<ReadThafseerScreen> {
           padding: const EdgeInsets.all(16.0),
           child: Text(
             widget.selectedThafseer.content,
-            style: TextStyle(fontSize: Provider.of<QuranProvider>(context, listen: false).tamilFontSize),
+            style: TextStyle(fontSize: Provider.of<QuranProvider>(context, listen: false).translationFontSize),
           ),
         ),
       ),

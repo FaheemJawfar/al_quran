@@ -213,10 +213,10 @@ class QuranProvider extends ChangeNotifier {
 
   double _tamilFontSize = AppConfig.defaultTranslationFontSize;
 
-  double get tamilFontSize =>
+  double get translationFontSize =>
       AppPreferences.getDouble('tamilFontSize') ?? _tamilFontSize;
 
-  set tamilFontSize(double value) {
+  set translationFontSize(double value) {
     AppPreferences.setDouble('tamilFontSize', value);
     _tamilFontSize = value;
     notifyListeners();
@@ -274,7 +274,7 @@ class QuranProvider extends ChangeNotifier {
   void clearSettings() {
     tamilFont = AppConfig.appDefaultFont;
     arabicFont = AppConfig.defaultArabicFont;
-    tamilFontSize = AppConfig.defaultTranslationFontSize;
+    translationFontSize = AppConfig.defaultTranslationFontSize;
     arabicFontSize = AppConfig.defaultArabicFontSize;
     selectedTranslation = AppConfig.defaultTranslation;
     selectedReciter = AppConfig.defaultReciter;
