@@ -1,3 +1,4 @@
+import 'package:al_quran/app_config/app_config.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
@@ -40,7 +41,7 @@ class _DownloadProgressPopupState extends State<DownloadProgressPopup> {
       final fileSavePath = '${appDocDir.path}/assets/translations/$fileName.xml';
 
       await dio.download(
-        'https://alqurandb-api.onrender.com/download/$fileName.xml',
+        '${AppConfig.quranTranslationsEndpoint}$fileName.xml',
         fileSavePath,
         options: Options(
           headers: {HttpHeaders.acceptEncodingHeader: '*'}, // Disable gzip

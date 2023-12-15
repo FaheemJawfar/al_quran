@@ -10,6 +10,7 @@ class AppConfig {
   static const String buyMeACoffee = 'https://www.buymeacoffee.com/faheemj';
   static const String payPalProfileLink = 'https://www.paypal.me/faheemjawfar';
   static const String whatsAppContactNumber = '94774106399';
+  static const String quranTranslationsEndpoint = 'https://alqurandb-api.onrender.com/quran_translations/xml/';
 
   static const String appDefaultFont = 'NotoSans';
   static const String defaultArabicFont = 'AlQalam';
