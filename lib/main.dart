@@ -1,4 +1,5 @@
 import 'package:al_quran/onboarding/onboarding_screen.dart';
+import 'package:al_quran/translation/translation.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:provider/provider.dart';
@@ -11,8 +12,13 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await AppPreferences.initialize();
 
+
+  // List<String> uniqueLanguages = [];
   // for(var lang in Translation.allTranslations){
-  //   print(lang.language);
+  //   if (!uniqueLanguages.contains(lang.language)) {
+  //     print(lang.language);
+  //     uniqueLanguages.add(lang.language);
+  //   }
   // }
 
   await JustAudioBackground.init(

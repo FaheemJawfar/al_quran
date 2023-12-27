@@ -1,3 +1,5 @@
+import 'package:al_quran/translation/translation.dart';
+import 'package:al_quran/utils/font_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -203,7 +205,10 @@ class _ShowVerseState extends State<ShowVerse> {
                 alignment: widget.isRtl ? Alignment.topRight: Alignment.topLeft,
                 child: Text(
                   widget.quranAyaTranslation.text,
-                  style: GoogleFonts.notoSans(
+                  // style: GoogleFonts.notoSans(
+                  //   fontSize: quranProvider.translationFontSize,
+                  // ),
+                  style: FontSelector.getFontStyle(quranProvider.selectedLanguage).copyWith(
                     fontSize: quranProvider.translationFontSize,
                   ),
                   textDirection: widget.isRtl ? TextDirection.rtl: TextDirection.ltr,
@@ -244,7 +249,7 @@ class _ShowVerseState extends State<ShowVerse> {
                 alignment: widget.isRtl ? Alignment.topRight: Alignment.topLeft,
                 child: Text(
                   widget.quranAyaTranslation.text,
-                  style: GoogleFonts.notoSans(
+                  style: FontSelector.getFontStyle(quranProvider.selectedLanguage).copyWith(
                     fontSize: quranProvider.translationFontSize,
                   ),
                   textDirection: widget.isRtl ? TextDirection.rtl: TextDirection.ltr,

@@ -108,7 +108,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   child: FontSizeSelector(
                 fontSize: quranProvider.translationFontSize,
                 text: SettingsTexts.bismillahTranslation,
-                fontFamily: quranProvider.tamilFont,
+                fontFamily: quranProvider.translationFont,
                 onChanged: (value) {
                   quranProvider.translationFontSize = value;
                 },

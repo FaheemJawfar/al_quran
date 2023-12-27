@@ -1,3 +1,4 @@
+import 'package:al_quran/translation/translation.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
@@ -44,6 +45,8 @@ class _SuraTranslationScreenState extends State<SuraTranslationScreen> {
     scrollToVerse();
   }
 
+
+
   void scrollToVerse() {
     if (widget.goToVerse > 0) {
       int index = widget.goToVerse;
@@ -71,6 +74,7 @@ class _SuraTranslationScreenState extends State<SuraTranslationScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: quranProvider.isDarkMode ? null : ColorConfig.backgroundColor,
       appBar: ReadSuraAppBar(

@@ -31,12 +31,7 @@ class QuranProvider extends ChangeNotifier {
 
   String _selectedTranslation = AppConfig.defaultTranslation;
 
-  List<String> languageFontsList = const [
-    'MUktaMalar',
-    'HindMadurai',
-    'NotoSansTamil',
-    'MeeraInimai'
-  ];
+
 
   List<String> arabicFontsList = const [
     'AlQalam',
@@ -54,6 +49,7 @@ class QuranProvider extends ChangeNotifier {
 
   set selectedTranslation(String value) {
     AppPreferences.setString('selectedTranslation', value);
+    AppPreferences.setString('selectedLanguage', Translation.findTranslationByFileName(value).language);
     _selectedTranslation = value;
     loadTranslation();
     isTranslationRtl = Translation.findTranslationByFileName(selectedTranslation).isRtl;
@@ -190,13 +186,13 @@ class QuranProvider extends ChangeNotifier {
     return TextSpan(children: spans);
   }
 
-  String _tamilFont = AppConfig.appDefaultFont;
+  String _translationFont = AppConfig.appDefaultFont;
 
-  String get tamilFont => AppPreferences.getString('tamilFont') ?? _tamilFont;
+  String get translationFont => AppPreferences.getString('translationFont') ?? _translationFont;
 
-  set tamilFont(String value) {
-    AppPreferences.setString('tamilFont', value);
-    _tamilFont = value;
+  set translationFont(String value) {
+    AppPreferences.setString('translationFont', value);
+    _translationFont = value;
     notifyListeners();
   }
 
@@ -211,14 +207,14 @@ class QuranProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  double _tamilFontSize = AppConfig.defaultTranslationFontSize;
+  double _translationFontSize = AppConfig.defaultTranslationFontSize;
 
   double get translationFontSize =>
-      AppPreferences.getDouble('tamilFontSize') ?? _tamilFontSize;
+      AppPreferences.getDouble('translationFontSize') ?? _translationFontSize;
 
   set translationFontSize(double value) {
-    AppPreferences.setDouble('tamilFontSize', value);
-    _tamilFontSize = value;
+    AppPreferences.setDouble('translationFontSize', value);
+    _translationFontSize = value;
     notifyListeners();
   }
 
@@ -243,6 +239,10 @@ class QuranProvider extends ChangeNotifier {
     _selectedReciter = value;
     notifyListeners();
   }
+
+  String get selectedLanguage =>
+      AppPreferences.getString('selectedLanguage') ?? AppConfig.defaultLanguage;
+
 
   List<Reciter> get allReciters {
     return Reciter.recitersJsonList
@@ -272,11 +272,11 @@ class QuranProvider extends ChangeNotifier {
   }
 
   void clearSettings() {
-    tamilFont = AppConfig.appDefaultFont;
+    translationFont = AppConfig.appDefaultFont;
     arabicFont = AppConfig.defaultArabicFont;
     translationFontSize = AppConfig.defaultTranslationFontSize;
     arabicFontSize = AppConfig.defaultArabicFontSize;
-    selectedTranslation = AppConfig.defaultTranslation;
+    //selectedTranslation = AppConfig.defaultTranslation;
     selectedReciter = AppConfig.defaultReciter;
     isDarkMode = false;
   }
