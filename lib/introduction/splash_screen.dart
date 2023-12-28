@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'dart:async';
+import 'package:al_quran/utils/font_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../app_config/app_config.dart';
@@ -130,7 +131,7 @@ class _SplashScreenState extends State<SplashScreen> {
                               .allQuranReferences[selectedQuoteNumber][1],
                         )
                             .text,
-                        style: const TextStyle(
+                        style: FontSelector.getFontStyle(quranProvider.selectedLanguage).copyWith(
                           color: Colors.white,
                           fontSize: 16,
                         ),

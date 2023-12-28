@@ -25,7 +25,7 @@ class HomeTexts {
   static const String aboutUs = 'About us';
   static const String supportUs = 'Support us!';
   static const String shareAppText =
-      'Get Al Quran App and read the translation of quran in your language. Download now!: \n${AppConfig.playStoreUrl}';
+      'Get Al Quran App and read the translation of Quran in your language. Download now!: \n\n( ${AppConfig.appShortUrl} )';
 
 // Rate App
   static const String feedback = 'Feedback';

@@ -50,7 +50,6 @@ class FontSelector {
   ];
 
   static TextStyle getFontStyle(String selectedLanguage) {
-    print(selectedLanguage);
     switch (selectedLanguage) {
       case 'Albanian':
         return GoogleFonts.notoSans();

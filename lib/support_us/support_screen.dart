@@ -46,6 +46,7 @@ class _SupportUsScreenState extends State<SupportUsScreen> {
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 18),
               ),
+              const SizedBox(height: 10,),
               const Divider(),
               const Text(
                 SupportUsTexts.sendUsingCreditDebitCards,

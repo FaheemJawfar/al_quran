@@ -1,7 +1,5 @@
-import 'package:al_quran/translation/translation.dart';
 import 'package:al_quran/utils/font_selector.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import '../app_config/color_config.dart';

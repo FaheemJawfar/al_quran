@@ -60,11 +60,9 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
             child: ListView(
               shrinkWrap: true,
               children: <Widget>[
-                _buildListItem('1. Tamil Quran and Dua App'),
-                _buildListItem('2. Tanzil.net'),
-                _buildListItem('3. QuranEnc.com'),
-                _buildListItem('4. The Tamil Quran App (PJ)'),
-                _buildListItem('5. Onlinetntj.com'),
+                _buildListItem('1. Tanzil.net'),
+                _buildListItem('2. QuranEnc.com'),
+                _buildListItem('3. Alquran.cloud'),
 
               ],
             ),
