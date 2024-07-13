@@ -115,11 +115,14 @@ class _QuranAppDrawerState extends State<QuranAppDrawer> {
               HomeTexts.aboutUsTranslation,
               context,
               const AboutUsScreen()),
-          _buildListTiles(
-              _buildImageIcon('assets/images/donation.png'),
-              HomeTexts.donateUsTranslation,
-              context,
-              const SupportUsScreen()),
+
+          //Support screen disabled
+
+          // _buildListTiles(
+          //     _buildImageIcon('assets/images/donation.png'),
+          //     HomeTexts.donateUsTranslation,
+          //     context,
+          //     const SupportUsScreen()),
           // _buildActionListTiles(const Icon(Icons.update),
           //     HomeTexts.checkForUpdates, context, () {
           //   Launcher.findDeviceModelAndLaunchAppStore();
