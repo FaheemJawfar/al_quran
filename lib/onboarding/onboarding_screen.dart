@@ -148,32 +148,41 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          ElevatedButton(
-                            onPressed: () {
-                              if (checkSelections()) {
-                                _pageController.nextPage(
-                                  duration: const Duration(milliseconds: 200),
-                                  curve: Curves.easeIn,
-                                );
-                              } else {
-                                if (_currentPage == 1) {
-                                  ShowToast.show(context,
-                                      'Please choose your language to select a translation');
-                                }
-                              }
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.black,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(50),
-                              ),
-                              elevation: 0,
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 20),
-                              textStyle: const TextStyle(fontSize: 13),
-                            ),
-                            child: const Text("NEXT"),
-                          ),
+                       ElevatedButton(
+  onPressed: () {
+    if (checkSelections()) {
+      _pageController.nextPage(
+        duration: const Duration(milliseconds: 200),
+        curve: Curves.easeIn,
+      );
+    } else {
+      if (_currentPage == 1) {
+        ShowToast.show(
+          context,
+          'Please choose your language to select a translation',
+        );
+      }
+    }
+  },
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Colors.black,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(50),
+    ),
+    elevation: 0,
+    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+    textStyle: const TextStyle(fontSize: 13),
+  ),
+  child: const Row(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Text("NEXT"),
+      SizedBox(width: 8),
+      Icon(Icons.arrow_forward, size: 18),
+    ],
+  ),
+)
+
                         ],
                       ),
                     )

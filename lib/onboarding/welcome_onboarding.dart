@@ -21,13 +21,15 @@ class _WelcomeOnboardingState extends State<WelcomeOnboarding> {
           height: 30,
         ),
         const Text(
-          'Assalamu Alaikum!',
+          'بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: 30,
+            fontFamily: 'Arabic'
           ),
         ),
+        const Divider(),
         const SizedBox(height: 15),
         const Text(
           'Please setup your translation language and choose a translation.',

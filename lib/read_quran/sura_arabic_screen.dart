@@ -64,7 +64,7 @@ class _SuraArabicScreenState extends State<SuraArabicScreen> {
     quranProvider = Provider.of<QuranProvider>(context);
 
     return Scaffold(
-      appBar: ReadSuraAppBar(
+      appBar: const ReadSuraAppBar(
         arabicOnly: true,
       ),
       body: PageView.builder(
