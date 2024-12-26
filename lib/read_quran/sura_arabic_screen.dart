@@ -1,102 +1,100 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../app_config/color_config.dart';
-import 'quran_helper.dart';
 import '../providers/quran_provider.dart';
+import '../utils/shared_preferences.dart';
 import 'read_sura_appbar.dart';
+import 'quran_page_data.dart';
 
 class SuraArabicScreen extends StatefulWidget {
-  const SuraArabicScreen({Key? key}) : super(key: key);
+  final int? initialPageNumber;
+
+  const SuraArabicScreen({Key? key, this.initialPageNumber}) : super(key: key);
 
   @override
   State<SuraArabicScreen> createState() => _SuraArabicScreenState();
 }
 
 class _SuraArabicScreenState extends State<SuraArabicScreen> {
-  final ScrollController scrollController = ScrollController();
-  late final quranProvider = Provider.of<QuranProvider>(context, listen: true);
+  late final PageController pageController;
+  late QuranProvider quranProvider;
+  Timer? debounceTimer;
+  int? lastPageNumber;
+
+  @override
+  void initState() {
+    super.initState();
+    // Set initial page, default to page 603 if no initialPageNumber is provided
+    int initialPage = 604 - (widget.initialPageNumber ?? 0);
+    pageController = PageController(initialPage: initialPage);
+
+    pageController.addListener(() {
+      int currentPageNumber = (604 - pageController.page!.round()).toInt();
+
+      // Debounce to avoid frequent updates during fast scrolling
+      debounceTimer?.cancel();
+      debounceTimer = Timer(const Duration(milliseconds: 200), () {
+        if (lastPageNumber != currentPageNumber) {
+          lastPageNumber = currentPageNumber;
+          updateCurrentSura(currentPageNumber);
+        }
+      });
+    });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      quranProvider = Provider.of<QuranProvider>(context, listen: false);
+      if (widget.initialPageNumber == null) {
+        // Smooth scroll to the selected Sura's starting page if no initial page is provided
+        int selectedSuraNumber = quranProvider.selectedSuraNumber;
+        int selectedSuraStartingPage =
+            MadaniDataSource().pageForSuraArray[selectedSuraNumber - 1];
+
+        int targetPage = 604 - selectedSuraStartingPage; // Account for reversed navigation
+        pageController.animateToPage(
+          targetPage,
+          duration: const Duration(milliseconds: 10),
+          curve: Curves.easeInOut,
+        );
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
+    quranProvider = Provider.of<QuranProvider>(context);
+
     return Scaffold(
       appBar: ReadSuraAppBar(
         arabicOnly: true,
-        arabicScrollController: scrollController,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(10),
-        child: SingleChildScrollView(
-          controller: scrollController,
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(
-                  color: quranProvider.isDarkMode
-                      ? Colors.white
-                      : ColorConfig.primaryColor,
-                  width: 2),
-              borderRadius: BorderRadius.circular(10),
-              color:
-                  quranProvider.isDarkMode ? null : ColorConfig.backgroundColor,
-            ),
-            padding: const EdgeInsets.all(10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                if (quranProvider.selectedSuraNumber != 1 &&
-                    quranProvider.selectedSuraNumber != 9)
-                  Image.asset(
-                    'assets/images/bismillah.png',
-                    height: 40,
-                    width: double.infinity,
-                    color:
-                        quranProvider.isDarkMode ? Colors.white : Colors.black,
-                  ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Directionality(
-                  textDirection: TextDirection.rtl,
-                  child: RichText(
-                    textAlign: TextAlign.justify,
-                    text: _buildRichTextSpan(),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+      body: PageView.builder(
+        controller: pageController,
+        itemCount: 604, // Total Quran pages
+        itemBuilder: (context, index) {
+          final pageNumber = (604 - index).toString().padLeft(3, '0'); // Format with leading zeros
+          return Image.asset(
+            'assets/quran_pages/page$pageNumber.png',
+            fit: BoxFit.contain,
+          );
+        },
       ),
     );
   }
 
   @override
   void dispose() {
-    scrollController.dispose();
+    debounceTimer?.cancel();
+    pageController.dispose();
     super.dispose();
   }
 
-  TextSpan _buildRichTextSpan() {
-    List<InlineSpan> inlineSpans = [];
+  void updateCurrentSura(int pageNumber) {
+    int suraNumber = MadaniDataSource().suraForPageArray[pageNumber - 1];
+    AppPreferences.setInt('lastPageNumber', pageNumber);
+    AppPreferences.setInt('lastSuraNumber', suraNumber);
+    quranProvider.selectedSuraNumber = suraNumber;
 
-    for (var verse in quranProvider.selectedSuraArabicForArabicOnlyScreen) {
-      inlineSpans.add(TextSpan(
-        text: verse.text,
-        style: TextStyle(
-          fontSize: quranProvider.arabicFontSize,
-          fontFamily: quranProvider.arabicFont,
-          color: quranProvider.isDarkMode ? Colors.white : Colors.black,
-        ),
-      ));
-
-      inlineSpans.add(TextSpan(
-        text: '${QuranHelper.getVerseEndSymbol(verse.ayaIndex)} ',
-        style: TextStyle(
-          fontSize: quranProvider.arabicFontSize,
-          color: quranProvider.isDarkMode ? Colors.white : Colors.black,
-        ),
-      ));
-    }
-
-    return TextSpan(children: inlineSpans);
+    print("Updated Sura Number: $suraNumber");
+    print("Updated Page Number: $pageNumber");
   }
 }

@@ -43,10 +43,10 @@ class _HomeScreenState extends State<HomeScreen>
   String getAppbarTitle() {
     switch (_tabController.index) {
       case 0:
-        return HomeTexts.translation;
+        return HomeTexts.onlyArabic;
 
       case 1:
-        return HomeTexts.onlyArabic;
+        return HomeTexts.translation;
 
       case 2:
         return HomeTexts.bookmarks;
@@ -125,8 +125,8 @@ class _HomeScreenState extends State<HomeScreen>
       body: TabBarView(
         controller: _tabController,
         children: const [
-          SuraListScreen(),
           SuraListArabicScreen(),
+          SuraListScreen(),
           BookmarksScreen(),
         ],
       ),
