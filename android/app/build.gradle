@@ -1,3 +1,16 @@
+buildscript {
+    ext.kotlin_version = '1.8.0' // Make sure this points to the latest version
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:8.2.1" // Update to a compatible version
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+
 plugins {
     id "com.android.application"
     id "org.jetbrains.kotlin.android"
@@ -34,12 +47,12 @@ android {
     ndkVersion flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
 
     sourceSets {
@@ -72,9 +85,4 @@ android {
 
 flutter {
     source '../..'
-}
-
-dependencies {
-    // Remove the Kotlin stdlib dependency if it's the only one
-    // implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
