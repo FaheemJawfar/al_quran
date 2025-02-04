@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../app_config/color_config.dart';
 import '../app_texts/home_texts.dart';
-import '../read_quran/quran_page_data.dart';
 import '../read_quran/sura_details.dart';
 import '../read_quran/sura_arabic_screen.dart';
 import '../providers/quran_provider.dart';

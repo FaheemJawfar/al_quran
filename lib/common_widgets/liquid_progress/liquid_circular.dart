@@ -41,7 +41,7 @@ class LiquidCircularProgressIndicator extends ProgressIndicator {
   }
 
   Color _getBackgroundColor(BuildContext context) =>
-      backgroundColor ?? Theme.of(context).colorScheme.background;
+      backgroundColor ?? Theme.of(context).colorScheme.surface;
 
   Color _getValueColor(BuildContext context) =>
       valueColor?.value ?? Theme.of(context).colorScheme.secondary;

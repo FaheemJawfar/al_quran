@@ -61,8 +61,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       if (fileExists) {
                         quranProvider.selectedTranslation = value;
                       } else {
-                        if (!mounted) return;
-                        showDownloadProgress(context, value);
+                        if (mounted) {
+                          showDownloadProgress(context, value);
+                        }
                       }
                     }),
               ),

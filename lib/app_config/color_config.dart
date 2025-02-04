@@ -10,7 +10,7 @@ class ColorConfig {
   static Color buttonColor = Colors.blue.shade700;
 
   static ButtonStyle darkModeButtonStyle = ButtonStyle(
-    backgroundColor: WidgetStateProperty.resolveWith<Color>((Set<MaterialState> states) {
+    backgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
       if (states.contains(WidgetState.pressed)) {
         return Colors.black;
       }

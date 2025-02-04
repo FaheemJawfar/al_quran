@@ -8,7 +8,6 @@ import '../providers/quran_provider.dart';
 import '../about/about_us.dart';
 import '../search/search_screen.dart';
 import '../settings/settings_screen.dart';
-import '../support_us/support_screen.dart';
 import '../quran_audio/quran_audio_screen.dart';
 import 'sura_verse_picker.dart';
 
